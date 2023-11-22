@@ -1,30 +1,72 @@
 fileFormatVersion: 2
 guid: 51d594e192d316448a2c8ebecb28eebc
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: DestructibleWall_3
-    21300002: DestructibleWall_4
-    21300004: DestructibleWall_15
-    21300006: DestructibleWall_32
-    21300008: DestructibleWall_51
-    21300010: DestructibleWall_52
-    21300012: DestructibleWall_53
-    21300014: DestructibleWall_59
-    21300016: DestructibleWall_60
-    21300018: estructibleWall_Whole
-    21300020: DestructibleWall_1
-    21300022: DestructibleWall_2
-    21300024: DestructibleWall_22
-    21300026: DestructibleWall_23
-    21300028: DestructibleWall_61
-    21300030: DestructibleWall_Whole
-    21300032: DestructibleWall_0
-    21300034: DestructibleWall_6
-    21300036: DestructibleWall_11
-    21300038: DestructibleWall_12
-    21300040: DestructibleWall_13
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: DestructibleWall_3
+  - first:
+      213: 21300002
+    second: DestructibleWall_4
+  - first:
+      213: 21300004
+    second: DestructibleWall_15
+  - first:
+      213: 21300006
+    second: DestructibleWall_32
+  - first:
+      213: 21300008
+    second: DestructibleWall_51
+  - first:
+      213: 21300010
+    second: DestructibleWall_52
+  - first:
+      213: 21300012
+    second: DestructibleWall_53
+  - first:
+      213: 21300014
+    second: DestructibleWall_59
+  - first:
+      213: 21300016
+    second: DestructibleWall_60
+  - first:
+      213: 21300018
+    second: estructibleWall_Whole
+  - first:
+      213: 21300020
+    second: DestructibleWall_1
+  - first:
+      213: 21300022
+    second: DestructibleWall_2
+  - first:
+      213: 21300024
+    second: DestructibleWall_22
+  - first:
+      213: 21300026
+    second: DestructibleWall_23
+  - first:
+      213: 21300028
+    second: DestructibleWall_61
+  - first:
+      213: 21300030
+    second: DestructibleWall_Whole
+  - first:
+      213: 21300032
+    second: DestructibleWall_0
+  - first:
+      213: 21300034
+    second: DestructibleWall_6
+  - first:
+      213: 21300036
+    second: DestructibleWall_11
+  - first:
+      213: 21300038
+    second: DestructibleWall_12
+  - first:
+      213: 21300040
+    second: DestructibleWall_13
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -41,9 +83,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -52,12 +97,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -75,11 +120,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -89,8 +140,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -100,8 +153,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,7 +166,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,6 +201,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3c6b4d0a89ef8c24280b78b114403a21
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -151,6 +222,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2c3c84297beaf854dafd5b56560098b5
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -171,6 +243,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3608ca1a4dac5d44a95d6d7410fa2daa
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -191,6 +264,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fc13e3cf60982b4488deff16b1dff4b2
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -211,6 +285,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 02143b557d0978b409d238d746669902
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
@@ -231,6 +306,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4592376af9b95cd48adfe88da3363bb8
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -239,13 +315,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: 
+    secondaryTextures: []
+    nameFileIdTable:
+      DestructibleWall_0: 21300032
+      DestructibleWall_12: 21300038
+      DestructibleWall_13: 21300040
+      DestructibleWall_3: 21300000
+      DestructibleWall_4: 21300002
+      DestructibleWall_6: 21300034
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
