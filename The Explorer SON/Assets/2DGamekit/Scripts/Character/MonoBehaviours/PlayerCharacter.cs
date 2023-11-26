@@ -266,46 +266,8 @@ namespace Gamekit2D
 
         void Update()
         {
-            print (PuedoMoverme);
-            print (TengoGafas);
-            print (TengoPalos);
-            print (TengoPicos);
-            print (TengoPigmentoNegro);
-            print (TengoPigmentoRojo);
-            print (TengoTubo);
-            print (TengoResina);
-            print (Climbing);
-            print (m_MoveVector);
-
-            //Con esto puedo comprobar el estado de la variable en cada frame
-            //Debug.Log(TengoPicos);
-            //Debug.Log(EstoyEscalando);
-            
-
-            //if(Physics2D.OverlapCircle(WallCheck.WallC.position, WallCheckRadius, 31))
-            /*if (Input.GetButtonDown("Cancel"))
-            {
-                Debug.Log("Estoy tocando una pared");
-                if(UsoPicos == true)
-                {
-                    EstoyEscalando = true;
-                }
-            }
-            */
-
             Climbing.y = Input.GetAxisRaw("Vertical") * climbSpeed;
             Caer.y = -1f;
-            //Debug.Log(Climbing);
-            
-            /*
-            if (PuedoMoverme == false)
-            {
-                if (Input.GetButtonDown("Interact"))
-                {
-                    PuedoMoverme = true;
-                }
-            }
-           */
 
             if (PlayerInput.Instance.Pause.Down)
             {
@@ -326,14 +288,6 @@ namespace Gamekit2D
                 }
             }
 
-            /* Esto ha sido un intento raro de hacer lo que ya he hecho antes xdd
-            if(InventoryController.HaveControl(Picos) == True)
-            {
-                TengoPicos = true;
-                Debug.Log("He conseguido los picos bien");
-            }
-            */
-
             //Si tengo los picos, aviso
             if(TengoPicos == true) 
             {
@@ -346,7 +300,6 @@ namespace Gamekit2D
                 if(TengoPicos == true && EstoyEscalando == false && SinPicos.texto == false)
                 {
                     UsoPicos = !UsoPicos;
-                    //Debug.Log("Estoy pulsando el boton de los picos");
                 }
             }
         }
@@ -367,11 +320,9 @@ namespace Gamekit2D
                 if(EstoyEscalando == true)
                 {
                     m_CharacterController2D.Move(Climbing * Time.deltaTime);
-                    //Debug.Log("Estoy escalando");
+
                     if(Input.GetButtonDown("Jump"))
                     {
-                        //Debug.Log("He saltado de la pared");
-                        //rb2D.AddForce(transform.up * WallJump);
                         DejoDeEscalar();
                     }
                 }

@@ -244,8 +244,6 @@ namespace Gamekit2D
                 Flecha.SetActive(false);
             }
 
-            print(HeConstruidoelTelescopio);
-
             if(PlayerCharacter.TengoPalos == true && PlayerCharacter.TengoTubo == true && PlayerCharacter.TengoGafas == true && PrimeraVez == true && PlayerCharacter.PuedoMoverme == true)
             {
                 Circulo13.enabled = true;
