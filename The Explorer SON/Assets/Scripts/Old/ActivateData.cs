@@ -15,26 +15,31 @@ namespace Gamekit2D
         public void Aprendo1 ()
         {
             Data1 = true;
-        }
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Notification"), transform.position);
+		}
 
         public void Aprendo2 ()
         {
             Data2 = true;
-        }
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Notification"), transform.position);
+		}
 
         public void Aprendo3 ()
         {
             Data3 = true;
-        }
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Notification"), transform.position);
+		}
 
         public void Aprendo4 ()
         {
             Data4 = true;
-        }
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Notification"), transform.position);
+		}
 
         public void Aprendo5 ()
         {
             Data5 = true;
-        }
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Notification"), transform.position);
+		}
     }
 }

@@ -61,7 +61,6 @@ namespace Gamekit2D
                     Dialogo.NumberD = 100;
                     SinPicos.Texto();
                     PosteUI.SetActive(true);
-                    //Debug.Log("Funciona");
                     a = true;
                 }
                 else if (Acerte == true)
@@ -69,7 +68,6 @@ namespace Gamekit2D
                     SinPicos.CierroTexto();
                     PlayerCharacter.PuedoMoverme = true;
                     PosteUI.SetActive(false);
-                    //Debug.Log("NO Funciona");
                     a = false;
                 }
             }

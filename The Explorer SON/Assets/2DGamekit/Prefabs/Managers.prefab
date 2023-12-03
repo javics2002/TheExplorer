@@ -145,4 +145,20 @@ MonoBehaviour:
         Data3: 399806633
         Data4: 214265246
       Path: event:/CorrectAnswer
+  - name: IncorrectAnswer
+    eventReference:
+      Guid:
+        Data1: 892399370
+        Data2: 1326694018
+        Data3: 1833220748
+        Data4: 307790391
+      Path: event:/IncorrectAnswer
+  - name: Notification
+    eventReference:
+      Guid:
+        Data1: -717385708
+        Data2: 1287121763
+        Data3: -1630338376
+        Data4: 1300811989
+      Path: event:/Notification
   emitters: []

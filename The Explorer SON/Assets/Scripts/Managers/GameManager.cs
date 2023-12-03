@@ -4,10 +4,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance;
 
-	[HideInInspector]
-	public AudioManager audioManager;
-	[HideInInspector]
-	public FMODEvents fmodEvents;
+	[HideInInspector] public AudioManager audioManager;
+	[HideInInspector] public FMODEvents fmodEvents;
 
 	private void Awake() {
 		if (Instance == null) {

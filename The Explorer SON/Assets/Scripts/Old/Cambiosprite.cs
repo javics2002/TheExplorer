@@ -16,7 +16,6 @@ namespace Gamekit2D
         bool Escalo = false;
         float Speed;
         bool derecha = true;
-        public AudioSource Climb;
         //public PlayerCharacter PlayerCharacter;
 
         void Start()
@@ -35,7 +34,6 @@ namespace Gamekit2D
             PositionExplorer.position = PositionEllen.position;
 
             animator.SetFloat("VerticalSpeed", Speed);
-            animator.SetBool("Escalo", Escalo);
 
             if(PlayerCharacter.UsoPicos == true)
             {
@@ -113,13 +111,13 @@ namespace Gamekit2D
         {
             if(SpriteExplorer.enabled == true)
             {
-                Climb.Play();
+                //Climb.Play(); Para rayito
             }
         }
 
         public void StopClimb()
         {
-            Climb.Stop();
+            //Climb.Stop(); rayito te quiero
         }
     }
 }

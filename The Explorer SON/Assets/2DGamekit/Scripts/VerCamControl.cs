@@ -18,7 +18,6 @@ namespace Gamekit2D
 
         void Update()
         {
-            print(PuedoMoverme);
             transform.localEulerAngles = (new Vector3(currAngle, 0, 0));
 
             if(PuedoMoverme == true)

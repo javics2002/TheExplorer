@@ -115,7 +115,6 @@ namespace FreeDraw
             }
             ApplyMarkedPixelChanges();
 
-            //Debug.Log("Dimensions: " + pixelWidth + "," + pixelHeight + ". Units to pixels: " + unitsToPixels + ". Pixel pos: " + pixel_pos);
             previous_drag_position = pixel_pos;
         }
 

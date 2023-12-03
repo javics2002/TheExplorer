@@ -34,7 +34,6 @@ namespace Gamekit2D
         public BulletPool bulletPool;
         public Transform cameraFollowTarget;
         const float WallCheckRadius = .2f;
-        //public Transform WallCheck;
 
         public float maxSpeed = 10f;
         public float groundAcceleration = 100f;
@@ -55,11 +54,12 @@ namespace Gamekit2D
         public float meleeAttackDashSpeed = 5f;
         public bool dashWhileAirborne = false;
 
-        public RandomAudioPlayer footstepAudioPlayer;
-        public RandomAudioPlayer landingAudioPlayer;
-        public RandomAudioPlayer hurtAudioPlayer;
-        public RandomAudioPlayer meleeAttackAudioPlayer;
-        public RandomAudioPlayer rangedAttackAudioPlayer;
+        //TODO
+        //public RandomAudioPlayer footstepAudioPlayer;
+        //public RandomAudioPlayer landingAudioPlayer;
+        //public RandomAudioPlayer hurtAudioPlayer;
+        //public RandomAudioPlayer meleeAttackAudioPlayer;
+        //public RandomAudioPlayer rangedAttackAudioPlayer;
 
         public float shotsPerSecond = 1f;
         public float bulletSpeed = 5f;
@@ -123,17 +123,17 @@ namespace Gamekit2D
         protected const float k_MaxHurtJumpAngle = 89.999f;
         protected const float k_GroundedStickingVelocityMultiplier = 3f;    // This is to help the character stick to vertically moving platforms.
 
-        //Empiezo a editar el script desde aqui, solo he agregado unas variables sobre el uso de los picos y he hecho que se activen cuando tienen que activarse. Cuano edite yo algo, te aviso con un comentario. Ultimo comentario en la linea 249
+        //Empiezo a editar el script desde aqui, solo he agregado unas variables sobre el uso de los picos
+        //y he hecho que se activen cuando tienen que activarse. Cuano edite yo algo, te aviso con un comentario.
+        //Ultimo comentario en la linea 249
         //He creado estas variables para controlar el estado de los picos, al inicio ni los tienes ni los usas.
-        public static bool TengoPicos = true; //false;
+        public static bool TengoPicos = false;
         public static bool UsoPicos = false; 
         public static Vector2 Climbing;
         Vector2 Caer;
         public bool EstoyEscalando = false;
         public float WallJump = 3f;
         bool EstoyEnCueva = false;
-        //public gameObject Ellen;
-        //public InventoryController InventoryController = GetComponent<InventoryController>;
 
         //used in non alloc version of physic function
         protected ContactPoint2D[] m_ContactsBuffer = new ContactPoint2D[16];
@@ -156,11 +156,6 @@ namespace Gamekit2D
 
         void Start()
         {
-            //Comprobamos que no tenemos picos.
-            if(TengoPicos == false)
-            {
-                //Debug.Log("No tengo picos");
-            }
             EstoyEscalando = false;
             climbSpeed = 3f;
 
@@ -286,12 +281,6 @@ namespace Gamekit2D
                 {
                     Unpause();
                 }
-            }
-
-            //Si tengo los picos, aviso
-            if(TengoPicos == true) 
-            {
-                //Debug.Log("Puedo usar los picos");
             }
 
             //Si puso el boton para usar los picos teniendo los picos, los saco. Si ya los tengo sacados, los guardo
@@ -463,7 +452,7 @@ namespace Gamekit2D
             bullet.rigidbody2D.velocity = new Vector2(facingLeft ? -bulletSpeed : bulletSpeed, 0f);
             bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
 
-            rangedAttackAudioPlayer.PlayRandomSound();
+            //rangedAttackAudioPlayer.PlayRandomSound();
         }
 
         // Public functions - called mostly by StateMachineBehaviours in the character's Animator Controller but also by Events.
@@ -579,7 +568,7 @@ namespace Gamekit2D
 
                 if (!wasGrounded && m_MoveVector.y < -1.0f)
                 {//only play the landing sound if falling "fast" enough (avoid small bump playing the landing sound)
-                    landingAudioPlayer.PlayRandomSound(m_CurrentSurface);
+                    //landingAudioPlayer.PlayRandomSound(m_CurrentSurface);
                 }
             }
             else
@@ -832,7 +821,7 @@ namespace Gamekit2D
                 m_Animator.SetTrigger(m_HashForcedRespawnPara);
 
             m_Animator.SetBool(m_HashGroundedPara, false);
-            hurtAudioPlayer.PlayRandomSound();
+            //hurtAudioPlayer.PlayRandomSound();
 
             //if the health is < 0, mean die callback will take care of respawn
             if(damager.forceRespawn && damageable.CurrentHealth > 0)
@@ -886,7 +875,7 @@ namespace Gamekit2D
         {
             meleeDamager.EnableDamage();
             meleeDamager.disableDamageAfterHit = true;
-            meleeAttackAudioPlayer.PlayRandomSound();
+            //meleeAttackAudioPlayer.PlayRandomSound();
         }
 
         public void DisableMeleeAttack()
@@ -902,7 +891,7 @@ namespace Gamekit2D
 
         public void PlayFootstep()
         {
-            footstepAudioPlayer.PlayRandomSound(m_CurrentSurface);
+            //footstepAudioPlayer.PlayRandomSound(m_CurrentSurface);
             var footstepPosition = transform.position;
             footstepPosition.z -= 1;
             VFXController.Instance.Trigger("DustPuff", footstepPosition, 0, false, null, m_CurrentSurface);

@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security.Principal;
-
-using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using UnityEngine;
 
 namespace Gamekit2D {
 	public class SinPicos : MonoBehaviour {
@@ -14,9 +9,6 @@ namespace Gamekit2D {
 		public Transform PositionExplorer;
 		bool derecha = true;
 		public static bool texto = false;
-		public AudioSource AudioSource;
-		public AudioSource Salto;
-		//public GameObject PosteUI;
 
 		void Start() {
 			if (PlayerCharacter.UsoPicos == true) {
@@ -31,20 +23,6 @@ namespace Gamekit2D {
 
 		void Update() {
 			PositionExplorer.position = PositionEllen.position;
-			/*
-						if(PosteUI.activeSelf == true)
-						{
-							SpriteEllen.enabled = false;
-							SpriteExplorer.enabled = true;
-							PlayerCharacter.PuedoMoverme = false;
-							texto = true;
-							AudioSource.enabled = false;
-						}
-						else
-						{
-							PlayerCharacter.PuedoMoverme = true;
-						}
-			*/
 
 			if (PlayerCharacter.UsoPicos == true) {
 				SpriteExplorer.enabled = false;
@@ -68,7 +46,7 @@ namespace Gamekit2D {
 			}
 
 			if (Input.GetKey(KeyCode.Space) && PlayerCharacter.m_CharacterController2D.IsGrounded == true && texto == false) {
-				Salto.Play();
+				GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Jump"), transform.position);
 			}
 		}
 
@@ -85,7 +63,6 @@ namespace Gamekit2D {
 			SpriteExplorer.enabled = true;
 			PlayerCharacter.PuedoMoverme = false;
 			texto = true;
-			AudioSource.enabled = false;
 			PlayerCharacter.UsoPicos = false;
 		}
 
@@ -96,7 +73,6 @@ namespace Gamekit2D {
 			}
 			PlayerCharacter.PuedoMoverme = true;
 			texto = false;
-			AudioSource.enabled = true;
 		}
 	}
 }

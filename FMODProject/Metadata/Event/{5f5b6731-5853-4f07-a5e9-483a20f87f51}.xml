@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5f5b6731-5853-4f07-a5e9-483a20f87f51}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="name">
 			<value>AmbienceMusic</value>
 		</property>
@@ -38,7 +41,7 @@
 			<destination>{3106b57b-56aa-486e-870f-e89eb77b9f8a}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{8f5c3256-b32d-4829-8593-4333742d6b27}</destination>
+			<destination>{0d8d0da1-14a1-44a0-a779-d5a9522d725c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{c6ad13f3-9c02-4d2f-bd0a-cbd0265fa522}">
