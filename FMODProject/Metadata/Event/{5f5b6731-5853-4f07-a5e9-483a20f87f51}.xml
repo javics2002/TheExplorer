@@ -5,7 +5,7 @@
 			<value>AmbienceMusic</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4b942b04-682d-4c29-90dc-8f944b7f82b3}</destination>
@@ -68,9 +68,6 @@
 		<relationship name="automationTracks">
 			<destination>{c45bac61-3084-4adf-99a2-807cc8e5a9da}</destination>
 		</relationship>
-		<relationship name="modules">
-			<destination>{74702bcc-c926-4fe6-bd3a-60846dd78e31}</destination>
-		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{81b3c901-d894-4962-911e-eb9c413d85c1}</destination>
 		</relationship>
@@ -89,9 +86,6 @@
 		</property>
 	</object>
 	<object class="ParameterProxy" id="{3106b57b-56aa-486e-870f-e89eb77b9f8a}">
-		<relationship name="modules">
-			<destination>{74702bcc-c926-4fe6-bd3a-60846dd78e31}</destination>
-		</relationship>
 		<relationship name="preset">
 			<destination>{a159f5b9-0c32-463d-a925-2696fccdf394}</destination>
 		</relationship>
@@ -116,11 +110,6 @@
 	<object class="AutomationTrack" id="{c45bac61-3084-4adf-99a2-807cc8e5a9da}">
 		<relationship name="automator">
 			<destination>{85b8688f-e1dc-4223-a778-34729cc73222}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{74702bcc-c926-4fe6-bd3a-60846dd78e31}">
-		<relationship name="audioFile">
-			<destination>{1bca0084-77a2-4ac8-a5e0-cef49e760919}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{81b3c901-d894-4962-911e-eb9c413d85c1}">
@@ -223,7 +212,7 @@
 			<value>0</value>
 		</property>
 		<property name="inputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="mixerReturn">
 			<destination>{2758fb5c-974d-4de2-a307-a73a847bcac7}</destination>

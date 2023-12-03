@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c6db4678-0f0e-45b9-9120-84718f7c1c2c}">
+		<property name="assetPath">
+			<value>2DGamekt/Enemies/Gunner/GunnerSteamStage01.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{04922d41-dea3-4e5a-a1d9-b5ee69425a8f}</destination>
+		</relationship>
+	</object>
+</objects>

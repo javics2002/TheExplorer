@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8725938b-c962-4f38-8753-d1744f74e5f2}">
+		<property name="assetPath">
+			<value>2DGamekt/Enemies/Chomper/ChomperFootstep01.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.24337500000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{04922d41-dea3-4e5a-a1d9-b5ee69425a8f}</destination>
+		</relationship>
+	</object>
+</objects>

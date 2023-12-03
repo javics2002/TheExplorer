@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{3d5891f0-1069-408a-a81b-df9dad3a3f1c}">
+		<property name="assetPath">
+			<value>2DGamekt/Ellen/Attacks/Ranged/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{04922d41-dea3-4e5a-a1d9-b5ee69425a8f}</destination>
+		</relationship>
+	</object>
+</objects>

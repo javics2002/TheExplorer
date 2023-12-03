@@ -513,7 +513,7 @@ namespace Gamekit2D
             PicosB = true;
             Pregunta1 = false;
 
-            Manager.instance.audioManager.PlayOneShotSound(Manager.instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+            GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
 		}
 
         public void CojoPicos()
@@ -524,27 +524,37 @@ namespace Gamekit2D
         public void AciertoPregunta2()
         {
             Pregunta2 = false;
-        }
+
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+		}
 
         public void AciertoPregunta3()
         {
             Pregunta3 = false;
-        }
+
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+		}
 
         public void AciertoPregunta4()
         {
             Pregunta4 = false;
-        }
+
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+		}
 
         public void AciertoPregunta5()
         {
             Pregunta5 = false;
-        }
+
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+		}
 
         public void AciertoPregunta6()
         {
             Pregunta6 = false;
-        }
+
+			GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("CorrectAnswer"), transform.position);
+		}
 
         public void ActivarE()
         {

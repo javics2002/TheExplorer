@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{40f9d3bd-7057-496d-a643-26013d5201ba}">
+		<property name="assetPath">
+			<value>2DGamekt/Environment/AcidPoolSplash01.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.1663958333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{04922d41-dea3-4e5a-a1d9-b5ee69425a8f}</destination>
+		</relationship>
+	</object>
+</objects>
