@@ -12,9 +12,6 @@ namespace Gamekit2D
         public string Temprano; //1
         public string MeFaltaResina; //2
         public string YaPuedo; //3
-        public AudioSource Audio1;
-        public AudioSource Audio2;
-        public AudioSource Audio3;
         static int CualDigo = 1;
         float DelayTime;
         public float Delay1 = 8;
@@ -37,21 +34,21 @@ namespace Gamekit2D
                 if(CualDigo == 1)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(Temprano);
-                    Audio1.Play();
+                    //Audio1.Play();
                     DelayTime = Delay1;
                 }
 
                 else if(CualDigo == 2)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(MeFaltaResina);
-                    Audio2.Play();
+                    //Audio2.Play();
                     DelayTime = Delay2;
                 }
 
                 else if(CualDigo == 3)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(YaPuedo);
-                    Audio3.Play();
+                    //Audio3.Play();
                     DelayTime = Delay3;
                 } 
 

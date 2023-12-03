@@ -15,14 +15,11 @@ namespace Gamekit2D
         public Transform PositionExplorer;
         bool Escalo = false;
         float Speed;
-        bool derecha = true;
-        //public PlayerCharacter PlayerCharacter;
 
         void Start()
         {
             SpriteExplorer.enabled = false;
             Escalo = false;
-            derecha = true;
             if(PlayerCharacter.UsoPicos == false)
             {
                 SpriteEllen.enabled = false;

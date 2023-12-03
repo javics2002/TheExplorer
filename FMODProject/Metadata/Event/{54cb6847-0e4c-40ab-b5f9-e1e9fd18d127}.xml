@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{54cb6847-0e4c-40ab-b5f9-e1e9fd18d127}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
 		<property name="name">
 			<value>Jump</value>
 		</property>
@@ -8,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4b942b04-682d-4c29-90dc-8f944b7f82b3}</destination>
+			<destination>{eafc7c6b-4bec-47cf-804e-75b2794a132a}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{5a9ed614-9186-4f33-a86a-f344af767234}</destination>
@@ -32,7 +35,7 @@
 			<destination>{b1895c90-3ecd-4df1-952d-8f9194832d6b}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{e17f6469-3625-481d-a8d2-41e46a49a056}</destination>
+			<destination>{6d815c86-8323-4dde-a041-f6d559dc4e1e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{5a9ed614-9186-4f33-a86a-f344af767234}">

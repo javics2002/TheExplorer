@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3530ef0a-be82-4f13-8cba-446d37825812}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>IncorrectAnswer</value>
 		</property>
@@ -8,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4b942b04-682d-4c29-90dc-8f944b7f82b3}</destination>
+			<destination>{edb32757-20f0-4df2-a3fe-ee3763c78543}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fcaa79d8-1178-4ec6-8739-5829a9dffe15}</destination>

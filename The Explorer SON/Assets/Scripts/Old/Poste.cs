@@ -19,7 +19,6 @@ namespace Gamekit2D
         public GameObject p;
         public GameObject s;
         public GameObject d;
-        public AudioSource Doblaje;
         public SinPicos SinPicos;
         bool a = false;
         public static bool Acerte = false;
@@ -56,7 +55,7 @@ namespace Gamekit2D
                     {
                         DialogueCanvasController.ActivateCanvasWithText(Ayuda);
                         DialogueCanvasController.DeactivateCanvasWithDelay(TiempoHablar);
-                        Doblaje.Play();
+                        //Doblaje.Play();
                     }
                     Dialogo.NumberD = 100;
                     SinPicos.Texto();

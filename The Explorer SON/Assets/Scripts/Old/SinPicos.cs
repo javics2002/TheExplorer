@@ -7,7 +7,6 @@ namespace Gamekit2D {
 		public SpriteRenderer SpriteExplorer;
 		public Transform PositionEllen;
 		public Transform PositionExplorer;
-		bool derecha = true;
 		public static bool texto = false;
 
 		void Start() {

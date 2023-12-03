@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5f5b6731-5853-4f07-a5e9-483a20f87f51}">
-		<property name="color">
-			<value>Red</value>
-		</property>
 		<property name="name">
 			<value>AmbienceMusic</value>
 		</property>
@@ -11,7 +8,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{4b942b04-682d-4c29-90dc-8f944b7f82b3}</destination>
+			<destination>{b9c96669-5554-4627-9861-5a006776dbdd}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{c6ad13f3-9c02-4d2f-bd0a-cbd0265fa522}</destination>
