@@ -169,4 +169,12 @@ MonoBehaviour:
         Data3: -371066443
         Data4: 668014845
       Path: event:/Dialog/Jump
+  - name: Ambience
+    eventReference:
+      Guid:
+        Data1: 599136679
+        Data2: 1179750911
+        Data3: 1138014654
+        Data4: 1116318817
+      Path: event:/Ambience/Ambiente
   emitters: []

@@ -156,8 +156,13 @@ namespace Gamekit2D
 
         public void Play ()
         {
-            PlayJustAmbient ();
-            PlayJustMusic ();
+
+
+
+          
+
+
+            
         }
 
         public void PlayJustMusic ()
