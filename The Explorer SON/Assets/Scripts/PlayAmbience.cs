@@ -29,7 +29,7 @@ public class PlayAmbience : MonoBehaviour
         GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Music"), "MusicIntensity", 0.1f);
 
 
-
+        //Con el escape podriamos hacer que hubiese un parametro que encapsulase el sonido rollo ecualizador)
     }
 
     // Update is called once per frame
