@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d95ffdd9-d82c-48c1-bac9-09dc08e7c555}">
+		<property name="name">
+			<value>AmbienceEqLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2a4c4da-4183-4873-9647-767926cc2b63}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c2dbd478-5a0f-4d6a-82e2-c09d1cda2319}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c2dbd478-5a0f-4d6a-82e2-c09d1cda2319}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

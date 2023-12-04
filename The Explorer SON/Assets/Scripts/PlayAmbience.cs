@@ -23,6 +23,13 @@ public class PlayAmbience : MonoBehaviour
         // Ahora GameManager está disponible, podemos reproducir el sonido
         GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Ambience"), transform.position);
         GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("Music"), transform.position);
+
+
+        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"), "AmbienceIntensity",0.1f);
+        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Music"), "MusicIntensity", 0.1f);
+
+
+
     }
 
     // Update is called once per frame
@@ -30,4 +37,7 @@ public class PlayAmbience : MonoBehaviour
     {
 
     }
+
+
+
 }
