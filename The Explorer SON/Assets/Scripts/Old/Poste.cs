@@ -55,8 +55,8 @@ namespace Gamekit2D
                     {
                         DialogueCanvasController.ActivateCanvasWithText(Ayuda);
                         DialogueCanvasController.DeactivateCanvasWithDelay(TiempoHablar);
-                        //Doblaje.Play();
-                    }
+						GameManager.Instance.fmodEvents.PlayDialogue("Poste el bueno");
+					}
                     Dialogo.NumberD = 100;
                     SinPicos.Texto();
                     PosteUI.SetActive(true);
@@ -67,7 +67,7 @@ namespace Gamekit2D
                     SinPicos.CierroTexto();
                     PlayerCharacter.PuedoMoverme = true;
                     PosteUI.SetActive(false);
-                    a = false;
+					a = false;
                 }
             }
         }

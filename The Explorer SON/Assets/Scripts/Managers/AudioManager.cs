@@ -1,9 +1,10 @@
 using UnityEngine;
 using FMODUnity;
+using System.Runtime.InteropServices;
+using FMOD.Studio;
 
-public class AudioManager : MonoBehaviour
+public partial class AudioManager : MonoBehaviour
 {
-
     public void PlayOneShotSound(EventReference eventReference, Vector3 worldPosition)
     {
         RuntimeManager.PlayOneShot(eventReference, worldPosition);
@@ -12,11 +13,12 @@ public class AudioManager : MonoBehaviour
 
     public void SetParameter(EventReference eventReference, string parameterName, float value)
     {
-        FMOD.Studio.EventInstance soundEvent = RuntimeManager.CreateInstance(eventReference); // Crear una instancia del evento
+		// Crear una instancia del evento
+		EventInstance soundEvent = RuntimeManager.CreateInstance(eventReference); 
         SetParameterInternal(soundEvent, parameterName, value);
     }
 
-    private void SetParameterInternal(FMOD.Studio.EventInstance soundEvent, string parameterName, float value)
+    private void SetParameterInternal(EventInstance soundEvent, string parameterName, float value)
     {
         if (soundEvent.isValid())
         {
@@ -31,8 +33,4 @@ public class AudioManager : MonoBehaviour
         }
     }
 }
-
-
-
-
 

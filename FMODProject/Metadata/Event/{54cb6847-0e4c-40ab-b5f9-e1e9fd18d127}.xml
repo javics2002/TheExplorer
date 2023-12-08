@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{54cb6847-0e4c-40ab-b5f9-e1e9fd18d127}">
 		<property name="color">
-			<value>Yellow</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>Jump</value>
@@ -62,7 +62,14 @@
 			<destination>{8a51a377-d053-4677-aea6-0f8efe7c7729}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{36443e79-0d3f-4c15-8daa-cc365df2602b}" />
+	<object class="EventAutomatableProperties" id="{36443e79-0d3f-4c15-8daa-cc365df2602b}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>1000</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{79f955a7-e6fd-4b5d-a248-1a9aaabc58e1}" />
 	<object class="Timeline" id="{61517f26-e6c5-4a70-b92c-5b38fc2f6041}">
 		<property name="isProxyEnabled">
@@ -99,6 +106,7 @@
 	<object class="MixerBusEffectChain" id="{9ebbf330-fe40-45f6-808e-b1d26e470a2b}">
 		<relationship name="effects">
 			<destination>{99971f3a-5530-4cc8-a4d7-987cc6091b1b}</destination>
+			<destination>{3ea96311-43de-43c7-af87-c7551016d8b1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7927ccc1-8fcb-49b2-ab6c-515f0aacca54}" />
@@ -109,4 +117,23 @@
 	</object>
 	<object class="MixerBusFader" id="{679affb6-5afc-4d4d-9009-39ba9b14bc6b}" />
 	<object class="MixerBusFader" id="{99971f3a-5530-4cc8-a4d7-987cc6091b1b}" />
+	<object class="PitchShifterEffect" id="{3ea96311-43de-43c7-af87-c7551016d8b1}">
+		<property name="pitch">
+			<value>1</value>
+		</property>
+		<property name="overlap">
+			<value>13</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{2694d577-02d4-4d22-bb16-53291cba881b}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{2694d577-02d4-4d22-bb16-53291cba881b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6.5</value>
+		</property>
+	</object>
 </objects>

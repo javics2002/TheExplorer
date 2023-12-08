@@ -7,5 +7,16 @@
 		<relationship name="folder">
 			<destination>{13a594a7-535b-4693-a7cf-6fba6d743d54}</destination>
 		</relationship>
+		<relationship name="audioTable">
+			<destination>{f7fb7d8b-0b42-40ca-8cae-9aaed15c0eaa}</destination>
+		</relationship>
+	</object>
+	<object class="AudioTable" id="{f7fb7d8b-0b42-40ca-8cae-9aaed15c0eaa}">
+		<property name="name">
+			<value>DialogLines</value>
+		</property>
+		<property name="sourceDirectory">
+			<value>Assets/Doblaje</value>
+		</property>
 	</object>
 </objects>

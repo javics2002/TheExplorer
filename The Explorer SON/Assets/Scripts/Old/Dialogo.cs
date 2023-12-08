@@ -37,7 +37,7 @@ namespace Gamekit2D
         public CircleCollider2D Circulo0;
         public CircleCollider2D Circulo1;
         public CircleCollider2D Circulo2;
-        public CircleCollider2D Circulo3;
+        public Collider2D Circulo3;
         public BoxCollider2D Circulo4;
         public CircleCollider2D Circulo5;
         public BoxCollider2D Circulo6;
@@ -271,7 +271,8 @@ namespace Gamekit2D
                         PlayerCharacter.PuedoMoverme = true;
                         DialogueCanvasController.DeactivateCanvasWithDelay(DelayTime);
                         DesactivarE();
-                        if(NumberD == 0)
+						GameManager.Instance.fmodEvents.StopDialogue();
+						if (NumberD == 0)
                         {
                             Circulo0.enabled = false;
                             Dialogo0 = false;
@@ -378,108 +379,125 @@ namespace Gamekit2D
         {
             NumberD = 0;
             ActivarE();
+            GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
         }
 
         public void D1()
         {
             NumberD = 1;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D2()
         {
             NumberD = 2;
             ActivarE();
-        }
-/*
-        public void D3()
-        {
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
+
+        public void D3() {
             NumberD = 3;
-        }
-*/
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
+
         public void D4()
         {
             NumberD = 4;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D5()
         {
             NumberD = 5;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D6()
         {
             NumberD = 6;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D7()
         {
             NumberD = 7;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D8()
         {
             NumberD = 8;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D9()
         {
             NumberD = 9;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D10()
         {
             NumberD = 10;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D11()
         {
             NumberD = 11;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D12()
         {
             NumberD = 12;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D13()
         {
             NumberD = 13;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D14()
         {
             NumberD = 14;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D15()
         {
             NumberD = 15;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D16()
         {
             NumberD = 16;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D17()
         {
             NumberD = 17;
             ActivarE();
-        }
+			GameManager.Instance.fmodEvents.PlayDialogue(NumberD.ToString());
+		}
 
         public void D100()
         {
