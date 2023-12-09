@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayAmbience : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         StartCoroutine(PlayAmbienceAfterDelay());
     }

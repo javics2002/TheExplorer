@@ -2,15 +2,40 @@ using UnityEngine;
 using FMODUnity;
 using System.Runtime.InteropServices;
 using FMOD.Studio;
+using System.Collections.Generic;
+using System.Data;
 
 public partial class AudioManager : MonoBehaviour
 {
+    List<EventInstance> eventInstances;
+
+    private void Awake()
+    {
+        eventInstances = new List<EventInstance>();
+    }
+
+    private void OnDestroy()
+    {
+        foreach (EventInstance instance in eventInstances)
+        {
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            instance.release();
+        }
+    }
+
     public void PlayOneShotSound(EventReference eventReference, Vector3 worldPosition)
     {
         RuntimeManager.PlayOneShot(eventReference, worldPosition);
     }
-    //Me gustaria saber poner parametros para poder ajustar el ambiente en funcion de la zona pero de momento esta asi
 
+    public EventInstance CreateInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        eventInstances.Add(eventInstance);
+        return eventInstance;
+    }
+
+    //Me gustaria saber poner parametros para poder ajustar el ambiente en funcion de la zona pero de momento esta asi
     public void SetParameter(EventReference eventReference, string parameterName, float value)
     {
 		// Crear una instancia del evento

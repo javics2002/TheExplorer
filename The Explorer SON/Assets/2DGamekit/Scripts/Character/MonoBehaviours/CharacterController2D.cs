@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FMOD.Studio;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gamekit2D
@@ -30,6 +31,9 @@ namespace Gamekit2D
         public Collider2D[] GroundColliders { get { return m_GroundColliders; } }
         public ContactFilter2D ContactFilter { get { return m_ContactFilter; } }
 
+        // Audio
+        EventInstance playerFootsteps;
+
 
         void Awake()
         {
@@ -46,11 +50,18 @@ namespace Gamekit2D
             Physics2D.queriesStartInColliders = false;
         }
 
+        private void Start()
+        {
+            playerFootsteps = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Footsteps"));
+        }
+
         void FixedUpdate()
         {
             m_PreviousPosition = m_Rigidbody2D.position;
             m_CurrentPosition = m_PreviousPosition + m_NextMovement;
             Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
+
+            FootstepsAudio();
 
             m_Rigidbody2D.MovePosition(m_CurrentPosition);
             m_NextMovement = Vector2.zero;
@@ -219,6 +230,23 @@ namespace Gamekit2D
             for (int i = 0; i < m_HitBuffer.Length; i++)
             {
                 m_HitBuffer[i] = new RaycastHit2D();
+            }
+        }
+
+        private void FootstepsAudio()
+        {
+            if (Velocity.x != 0 && IsGrounded)
+            {
+                PLAYBACK_STATE state;
+                playerFootsteps.getPlaybackState(out state);
+                if (state.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                    playerFootsteps.start();
+                }
+            }
+            else
+            {
+                playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
             }
         }
     }

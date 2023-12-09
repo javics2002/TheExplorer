@@ -177,4 +177,36 @@ MonoBehaviour:
         Data3: 1138014654
         Data4: 1116318817
       Path: event:/Ambience/Ambiente
+  - name: Music
+    eventReference:
+      Guid:
+        Data1: -903501519
+        Data2: 1327914518
+        Data3: 1832203932
+        Data4: -1607367426
+      Path: event:/Music/MusicGameplay
+  - name: Dialog
+    eventReference:
+      Guid:
+        Data1: -99554190
+        Data2: 1181344706
+        Data3: 2059140769
+        Data4: -1948656551
+      Path: event:/Dialog/Voice
+  - name: Footsteps
+    eventReference:
+      Guid:
+        Data1: 619853193
+        Data2: 1238782842
+        Data3: 455273397
+        Data4: -1753445242
+      Path: event:/SFX/Footsteps
+  - name: StoneFootsteps
+    eventReference:
+      Guid:
+        Data1: -1036574735
+        Data2: 1103572016
+        Data3: 1598674342
+        Data4: -95902321
+      Path: event:/SFX/StoneFootsteps
   emitters: []

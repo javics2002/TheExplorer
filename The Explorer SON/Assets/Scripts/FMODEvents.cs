@@ -29,7 +29,7 @@ public class FMODEvents : MonoBehaviour {
 	EventInstance dialogueInstance;
 	EVENT_CALLBACK dialogueCallback;
 
-	private void Start() {
+	private void Awake() {
 		eventsDictionary = new Dictionary<string, EventReference>();
 		emittersDictionary = new Dictionary<string, StudioEventEmitter>();
 
