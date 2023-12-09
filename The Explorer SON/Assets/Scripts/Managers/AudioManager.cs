@@ -57,5 +57,16 @@ public partial class AudioManager : MonoBehaviour
             soundEvent.release(); // Liberar la instancia en caso de error
         }
     }
+    public void PlayOneShotSoundInBus(EventReference eventReference, string busName, Vector3 worldPosition)
+    {
+        FMOD.Studio.Bus bus = FMODUnity.RuntimeManager.GetBus(busName);
+
+        bus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Detener eventos anteriores en el bus
+        bus.setPaused(false); // Asegurarse de que el bus no esté en pausa
+
+        RuntimeManager.PlayOneShot(eventReference, worldPosition);
+
+    }
+  
 }
 

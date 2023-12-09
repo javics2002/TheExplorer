@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{02aecdf1-be8c-47f1-b1fb-f49d1103e8ee}">
+		<property name="name">
+			<value>EqualisationLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2a4c4da-4183-4873-9647-767926cc2b63}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5900c348-f1d7-4be6-8060-a28ff5e11312}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5900c348-f1d7-4be6-8060-a28ff5e11312}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

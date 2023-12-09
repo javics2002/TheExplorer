@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{348f4d83-c4c5-49e8-8501-2d16850b4bb7}">
+		<property name="name">
+			<value>RandomSoundsRate</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2a4c4da-4183-4873-9647-767926cc2b63}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b1af5d07-ace3-40af-8d25-7f1a284a4b67}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b1af5d07-ace3-40af-8d25-7f1a284a4b67}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
