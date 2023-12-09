@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Climb Zone
+  - StoneGround
   layers:
   - Default
   - TransparentFX

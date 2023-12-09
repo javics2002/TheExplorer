@@ -1,5 +1,6 @@
 ﻿using FMOD.Studio;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Gamekit2D
@@ -33,6 +34,7 @@ namespace Gamekit2D
 
         // Audio
         EventInstance playerFootsteps;
+        EventInstance playerStoneFootsteps;
 
 
         void Awake()
@@ -53,6 +55,7 @@ namespace Gamekit2D
         private void Start()
         {
             playerFootsteps = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Footsteps"));
+            playerStoneFootsteps = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("StoneFootsteps"));
         }
 
         void FixedUpdate()
@@ -235,18 +238,55 @@ namespace Gamekit2D
 
         private void FootstepsAudio()
         {
+            bool inStoneGround = false;
+            // Check ground properties
+            RaycastHit hit;
+            float raycastDistance = 1f;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
+            {
+                if (hit.collider.gameObject.CompareTag("StoneGround"))
+                {
+                    // Dibujar la línea en el Editor
+                    Debug.DrawLine(transform.position, hit.point, Color.red);
+
+                    inStoneGround = true;
+                }
+            }
+            else
+            {
+                // Si el raycast no golpea nada, dibujar la línea hasta la distancia máxima
+                Vector3 endPoint = transform.position + Vector3.down * raycastDistance;
+                Debug.DrawLine(transform.position, endPoint, Color.green);
+            }
+
             if (Velocity.x != 0 && IsGrounded)
             {
                 PLAYBACK_STATE state;
-                playerFootsteps.getPlaybackState(out state);
-                if (state.Equals(PLAYBACK_STATE.STOPPED))
+                if (inStoneGround)
                 {
-                    playerFootsteps.start();
+                    playerStoneFootsteps.getPlaybackState(out state);
+
+                    if (state.Equals(PLAYBACK_STATE.STOPPED))
+                    {
+                        playerStoneFootsteps.start();
+                        playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
+                }
+                else
+                {
+                    playerFootsteps.getPlaybackState(out state);
+
+                    if (state.Equals(PLAYBACK_STATE.STOPPED))
+                    {
+                        playerFootsteps.start();
+                        playerStoneFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
                 }
             }
             else
             {
                 playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+                playerStoneFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
             }
         }
     }
