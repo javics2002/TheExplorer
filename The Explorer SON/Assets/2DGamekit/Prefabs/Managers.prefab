@@ -209,4 +209,12 @@ MonoBehaviour:
         Data3: 1598674342
         Data4: -95902321
       Path: event:/SFX/StoneFootsteps
+  - name: Climb
+    eventReference:
+      Guid:
+        Data1: 481295618
+        Data2: 1190182901
+        Data3: -364269947
+        Data4: 858700080
+      Path: event:/SFX/Climb
   emitters: []

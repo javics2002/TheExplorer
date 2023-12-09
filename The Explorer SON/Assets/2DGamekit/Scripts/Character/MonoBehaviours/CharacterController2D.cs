@@ -1,4 +1,5 @@
 ﻿using FMOD.Studio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -35,7 +36,7 @@ namespace Gamekit2D
         // Audio
         EventInstance playerFootsteps;
         EventInstance playerStoneFootsteps;
-
+        EventInstance playerClimb;
 
         void Awake()
         {
@@ -54,8 +55,20 @@ namespace Gamekit2D
 
         private void Start()
         {
+            StartCoroutine(updateAudioReferences());
+            
+        }
+
+        private IEnumerator updateAudioReferences()
+        {
+            while (GameManager.Instance.audioManager == null || GameManager.Instance.fmodEvents == null)
+            {
+                yield return null;
+            }
+
             playerFootsteps = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Footsteps"));
             playerStoneFootsteps = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("StoneFootsteps"));
+            playerClimb = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Climb"));
         }
 
         void FixedUpdate()
@@ -65,6 +78,7 @@ namespace Gamekit2D
             Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
 
             FootstepsAudio();
+            ClimbAudio();
 
             m_Rigidbody2D.MovePosition(m_CurrentPosition);
             m_NextMovement = Vector2.zero;
@@ -287,6 +301,24 @@ namespace Gamekit2D
             {
                 playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
                 playerStoneFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+
+        public void ClimbAudio()
+        {
+            if (PlayerCharacter.Climbing.y != 0)
+            {
+                PLAYBACK_STATE state;
+                playerClimb.getPlaybackState(out state);
+
+                if (state.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                    playerClimb.start();
+                }
+            }
+            else
+            {
+                playerClimb.stop(STOP_MODE.ALLOWFADEOUT);
             }
         }
     }
