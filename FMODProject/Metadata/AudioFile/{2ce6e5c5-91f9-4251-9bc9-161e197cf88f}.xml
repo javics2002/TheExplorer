@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{2ce6e5c5-91f9-4251-9bc9-161e197cf88f}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="assetPath">
 			<value>Doblaje/3.mp3</value>
 		</property>

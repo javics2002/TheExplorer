@@ -12,7 +12,6 @@ namespace Gamekit2D
         public GameObject panel;
         public DialogueCanvasController DialogueCanvasController;
         public string Peticion;
-        public AudioSource Doblaje;
         bool PrimeraVez = true;
 
         void Update()
@@ -23,8 +22,8 @@ namespace Gamekit2D
                 panel.SetActive(false);
                 DialogueCanvasController.ActivateCanvasWithText(Peticion);
                 DialogueCanvasController.DeactivateCanvasWithDelay(DelayTime2);
-                Doblaje.Play();
-                PrimeraVez = false;
+				GameManager.Instance.fmodEvents.PlayDialogue("Dibujo1");
+				PrimeraVez = false;
             }
         }   
     }

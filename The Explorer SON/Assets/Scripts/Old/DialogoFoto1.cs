@@ -9,15 +9,10 @@ namespace Gamekit2D
     public class DialogoFoto1 : MonoBehaviour
     {
         public DialogueCanvasController DialogueCanvasController;
-        bool HeEntradoAlCollider = false;
         static bool EsLaPrimeraVez = true;
         public float DelayTime1;
         float tiempo = 0;
         public string Dialogo1;
-        public AudioSource Doblaje;
-
-        //public Transform Capsule;
-        //public Transform Camera;
 
         void Start()
         {
@@ -28,8 +23,8 @@ namespace Gamekit2D
                 EsLaPrimeraVez = false;
                 FPPlayer.PuedoMoverme = false;
                 VerCamControl.PuedoMoverme = false;
-                Doblaje.Play();
-            }
+				GameManager.Instance.fmodEvents.PlayDialogue("Foto1");
+			}
             else
             {
                 FPPlayer.PuedoMoverme = true;

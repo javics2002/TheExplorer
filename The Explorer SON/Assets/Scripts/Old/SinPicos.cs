@@ -62,7 +62,6 @@ namespace Gamekit2D {
 			SpriteExplorer.enabled = true;
 			PlayerCharacter.PuedoMoverme = false;
 			texto = true;
-			PlayerCharacter.UsoPicos = false;
 		}
 
 		public void CierroTexto() {

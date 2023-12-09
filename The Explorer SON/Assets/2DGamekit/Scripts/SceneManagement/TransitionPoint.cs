@@ -101,7 +101,8 @@ namespace Gamekit2D
             }
             else
             {
-                SceneController.TransitionToScene (this);
+				GameManager.Instance.fmodEvents.StopDialogue();
+				SceneController.TransitionToScene (this);
             }
         }
 

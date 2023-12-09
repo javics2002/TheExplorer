@@ -193,28 +193,4 @@ MonoBehaviour:
         Data3: 2059140769
         Data4: -1948656551
       Path: event:/Dialog/Voice
-  - name: Footsteps
-    eventReference:
-      Guid:
-        Data1: 619853193
-        Data2: 1238782842
-        Data3: 455273397
-        Data4: -1753445242
-      Path: event:/SFX/Footsteps
-  - name: StoneFootsteps
-    eventReference:
-      Guid:
-        Data1: -1036574735
-        Data2: 1103572016
-        Data3: 1598674342
-        Data4: -95902321
-      Path: event:/SFX/StoneFootsteps
-  - name: Climb
-    eventReference:
-      Guid:
-        Data1: 481295618
-        Data2: 1190182901
-        Data3: -364269947
-        Data4: 858700080
-      Path: event:/SFX/Climb
   emitters: []

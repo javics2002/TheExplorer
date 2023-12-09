@@ -9,31 +9,31 @@ namespace Gamekit2D
     {
         public DialogueCanvasController DialogueCanvasController;
         public float DelayTime = 0f;
-        static bool Dialogo0 = true;
-        static bool Dialogo1 = true;
-        static bool Dialogo2 = false;
-        static bool Dialogo3 = true;
-        static bool Dialogo4 = true;
-        static bool Dialogo5 = false;
-        static bool Dialogo6 = true;
-        static bool Dialogo7 = false;
-        static bool Dialogo8 = true;
-        static bool Dialogo9 = true;
-        static bool Dialogo10 = false;
-        static bool Dialogo11 = false;
-        static bool Dialogo12 = false;
-        static bool Dialogo13 = false;
-        static bool Dialogo14 = false;
-        static bool Dialogo15 = true;
-        static bool Dialogo16 = false;
-        static bool Dialogo17 = false;
-        static bool PicosB = false;
-        static bool Pregunta1 = true;
-        static bool Pregunta2 = true;
-        static bool Pregunta3 = true;
-        static bool Pregunta4 = true;
-        static bool Pregunta5 = true;
-        static bool Pregunta6 = true;
+        public static bool Dialogo0 = true;
+        public static bool Dialogo1 = true;
+        public static bool Dialogo2 = false;
+        public static bool Dialogo3 = true;
+        public static bool Dialogo4 = true;
+        public static bool Dialogo5 = false;
+        public static bool Dialogo6 = true;
+        public static bool Dialogo7 = false;
+        public static bool Dialogo8 = true;
+        public static bool Dialogo9 = true;
+        public static bool Dialogo10 = false;
+        public static bool Dialogo11 = false;
+        public static bool Dialogo12 = false;
+        public static bool Dialogo13 = false;
+        public static bool Dialogo14 = false;
+        public static bool Dialogo15 = true;
+        public static bool Dialogo16 = false;
+        public static bool Dialogo17 = false;
+        public static bool PicosB = false;
+        public static bool Pregunta1 = true;
+        public static bool Pregunta2 = true;
+        public static bool Pregunta3 = true;
+        public static bool Pregunta4 = true;
+        public static bool Pregunta5 = true;
+        public static bool Pregunta6 = true;
         public CircleCollider2D Circulo0;
         public CircleCollider2D Circulo1;
         public CircleCollider2D Circulo2;
@@ -63,14 +63,13 @@ namespace Gamekit2D
         public GameObject Telescopio;
         public GameObject TranstitionToStars;
         public static bool HeConstruidoelTelescopio = false;
-        static bool PrimeraVez = true;
+        public static bool PrimeraVez = true;
         public static bool VengoFoto1 = true;
         public static bool VengoFoto2 = true;
         static bool E = false;
         public GameObject ImageE;
         public GameObject Flecha;
         public SinPicos SinPicos;
-        public AudioSource AudioHuevo;
 
         void Start()
         {
@@ -358,7 +357,6 @@ namespace Gamekit2D
                             Circulo15.enabled = false;
                             Dialogo15 = false;
                             SinPicos.CierroTexto();
-                            AudioHuevo.Stop();
                         }
                         else if(NumberD == 16)
                         {

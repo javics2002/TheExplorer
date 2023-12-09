@@ -18,17 +18,10 @@ namespace Gamekit2D
 
         void Update()
         {
-            print(PuedoMoverme);
             if (PuedoMoverme == true)
             {
                 transform.Rotate (Vector3.up * rotateSpeedX * Time.deltaTime * Input.GetAxis("Mouse X"));
             }
-            /* 
-            if (Input.GetButtonDown("Cancel"))
-            {
-                SceneManager.LoadScene("Calar");
-            }
-            */
         }
     }  
 }

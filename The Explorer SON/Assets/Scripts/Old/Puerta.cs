@@ -8,11 +8,11 @@ namespace Gamekit2D
     {
         public DialogueCanvasController DialogueCanvasController;
         public TransitionPoint TransitionPoint;
-        static bool TransitionPointActivo = false;
+        public static bool TransitionPointActivo = false;
         public string Temprano; //1
         public string MeFaltaResina; //2
         public string YaPuedo; //3
-        static int CualDigo = 1;
+        public static int CualDigo = 1;
         float DelayTime;
         public float Delay1 = 8;
         public float Delay2 = 12;
@@ -34,35 +34,28 @@ namespace Gamekit2D
                 if(CualDigo == 1)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(Temprano);
-                    //Audio1.Play();
-                    DelayTime = Delay1;
+					GameManager.Instance.fmodEvents.PlayDialogue("AunNo");
+					DelayTime = Delay1;
                 }
 
                 else if(CualDigo == 2)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(MeFaltaResina);
-                    //Audio2.Play();
-                    DelayTime = Delay2;
+					GameManager.Instance.fmodEvents.PlayDialogue("FaltaAlgo");
+					DelayTime = Delay2;
                 }
 
                 else if(CualDigo == 3)
                 {
                     DialogueCanvasController.ActivateCanvasWithText(YaPuedo);
-                    //Audio3.Play();
-                    DelayTime = Delay3;
+					GameManager.Instance.fmodEvents.PlayDialogue("Termino");
+					DelayTime = Delay3;
                 } 
 
                 Active = true;
                 PlayerCharacter.PuedoMoverme = false;
             }
         }
-        /*
-        void Awake()
-        {
-            CualDigo = 1;
-            TransitionPointActivo = false;
-        }
-*/
 
         void OnTriggerExit2D ()
         {
@@ -86,17 +79,17 @@ namespace Gamekit2D
 
         void Update ()
         {
-            if(Input.GetButtonDown("Interact") && Active == true)
+			if (Input.GetButtonDown("Interact") && Active == true)
             {
                 PlayerCharacter.PuedoMoverme = true;
                 DialogueCanvasController.DeactivateCanvasWithDelay(DelayTime);
                 Active = false;
                 if(CualDigo == 3)
                 {
-                    TransitionPointActivo = true;
-                    TransitionPoint.enabled = true;
-                    Puert.enabled = false;
-                }
+                    Invoke("ActivaTransitionPoint", DelayTime);
+					Puert.enabled = false;
+					PlayerCharacter.PuedoMoverme = false;
+				}
             }
 
             if(Dialogo.HeConstruidoelTelescopio == true)
@@ -112,5 +105,11 @@ namespace Gamekit2D
                 }
             }
         }
+
+        void ActivaTransitionPoint() {
+			TransitionPointActivo = true;
+			TransitionPoint.enabled = true;
+            TransitionPoint.Transition();
+		}
     }
 }

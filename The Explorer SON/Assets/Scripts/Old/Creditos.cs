@@ -10,7 +10,6 @@ namespace Gamekit2D
         public Text Pto;
         public Text Comentario;
         static int final = 100;
-        public AudioSource Gracias;
 
         void Start ()
         {
@@ -65,7 +64,69 @@ namespace Gamekit2D
             {
                 Comentario.text = "¡Wow! ¡Una exploración perfecta! ¡Tienes madera para esto! ¡Sigue así!";
             }
-            Gracias.Play();
+			GameManager.Instance.fmodEvents.PlayDialogue("Resultado");
+
+            ResetGame();
+		}
+
+        public void StopDialogue() {
+            GameManager.Instance.fmodEvents.StopDialogue();
         }
+
+        void ResetGame() {
+            PlayerCharacter.PuedoMoverme = true;
+			PlayerCharacter.TengoPigmentoRojo = false;
+			PlayerCharacter.TengoPigmentoNegro = false;
+			PlayerCharacter.TengoGafas = false;
+			PlayerCharacter.TengoPalos = false;
+			PlayerCharacter.TengoTubo = false;
+			PlayerCharacter.TengoResina = false;
+			PlayerCharacter.TengoPicos = false;
+			PlayerCharacter.UsoPicos = false;
+
+            Puerta.CualDigo = 1;
+            Puerta.TransitionPointActivo = false;
+
+            ActivateData.Data1 = false;
+            ActivateData.Data2 = false;
+            ActivateData.Data3 = false;
+            ActivateData.Data4 = false;
+            ActivateData.Data5 = false;
+
+            Poste.Acerte = false;
+
+			Dialogo.Dialogo0 = true;
+			Dialogo.Dialogo1 = true;
+			Dialogo.Dialogo2 = false;
+			Dialogo.Dialogo3 = true;
+			Dialogo.Dialogo4 = true;
+			Dialogo.Dialogo5 = false;
+			Dialogo.Dialogo6 = true;
+			Dialogo.Dialogo7 = false;
+			Dialogo.Dialogo8 = true;
+			Dialogo.Dialogo9 = true;
+			Dialogo.Dialogo10 = false;
+			Dialogo.Dialogo11 = false;
+			Dialogo.Dialogo12 = false;
+			Dialogo.Dialogo13 = false;
+			Dialogo.Dialogo14 = false;
+			Dialogo.Dialogo15 = true;
+			Dialogo.Dialogo16 = false;
+			Dialogo.Dialogo17 = false;
+			Dialogo.PicosB = false;
+			Dialogo.Pregunta1 = true;
+			Dialogo.Pregunta2 = true;
+			Dialogo.Pregunta3 = true;
+			Dialogo.Pregunta4 = true;
+			Dialogo.Pregunta5 = true;
+			Dialogo.Pregunta6 = true;
+			Dialogo.HeConstruidoelTelescopio = false;
+            Dialogo.PrimeraVez = true;
+			Dialogo.VengoFoto1 = true;
+			Dialogo.VengoFoto2 = true;
+
+            Puntuacion.NumeroFallos = 0;
+            SinPicos.texto = false;
+		}
     }
 }

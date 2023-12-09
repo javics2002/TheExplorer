@@ -9,13 +9,12 @@ namespace Gamekit2D
         public float DelayTime1;
         public DialogueCanvasController DialogueCanvasController;
         public string Peticion;
-        public AudioSource Doblaje;
 
         void Start()
         {
             DialogueCanvasController.ActivateCanvasWithText(Peticion);
             DialogueCanvasController.DeactivateCanvasWithDelay(DelayTime1);
-            Doblaje.Play();
-        }   
+			GameManager.Instance.fmodEvents.PlayDialogue("Pregunta 2");
+		}   
     }
 }
