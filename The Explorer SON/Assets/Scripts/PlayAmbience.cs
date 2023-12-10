@@ -63,5 +63,29 @@ public class PlayAmbience : MonoBehaviour
 
 
         }
+       
+    }
+    public void adjustEQINCave(bool isInCave)
+    {
+        if (!isInCave)
+        {
+            ambience.setParameterByName("MusicIntensity", 0.5f);
+            ambience.setParameterByName("EqualisationLevel", 0.0f);
+            ambience.setParameterByName("Zumbido", 0.4f);
+            ambience.setParameterByName("RandomSoundsRate", 0.4f);
+
+            music.setParameterByName("MusicIntensity", 0.30f);
+            music.setParameterByName("EqualisationLevel", 0.0f);
+        }
+        else
+        {
+            ambience.setParameterByName("MusicIntensity", 0.2f);
+            ambience.setParameterByName("EqualisationLevel", 0.4f);
+            ambience.setParameterByName("Zumbido", 0.0f);
+            ambience.setParameterByName("RandomSoundsRate", 0.0f);
+
+            music.setParameterByName("MusicIntensity", 0.40f);
+            music.setParameterByName("EqualisationLevel", 0.4f);
+        }
     }
 }
