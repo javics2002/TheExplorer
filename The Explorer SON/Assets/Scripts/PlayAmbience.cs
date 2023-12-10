@@ -11,7 +11,7 @@ public class PlayAmbience : MonoBehaviour
     private bool isEscapePressed = false;
     EventInstance music;
     EventInstance ambience;
-    void Awake()
+    void Start()
     {
         StartCoroutine(PlayAmbienceAfterDelay());
     }
@@ -23,11 +23,8 @@ public class PlayAmbience : MonoBehaviour
             yield return null;
         }
 
-
         music = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Music"));
         ambience = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Ambience"));
-
-
 
         ambience.setParameterByName("MusicIntensity", 0.5f);
         ambience.setParameterByName("EqualisationLevel", 0.0f);
@@ -36,11 +33,8 @@ public class PlayAmbience : MonoBehaviour
 
         music.setParameterByName("MusicIntensity", 0.30f);
         music.setParameterByName("EqualisationLevel", 0.0f);
-       
 
-
-       
-        
+        // Ahora GameManager estï¿½ disponible, podemos reproducir el sonido
         music.start();
         ambience.start();
     }
@@ -51,7 +45,7 @@ public class PlayAmbience : MonoBehaviour
         // Verificar si la tecla Escape ha sido presionada
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // Cambiar el valor del parámetro de ecualización al pulsar Escape
+            // Cambiar el valor del parï¿½metro de ecualizaciï¿½n al pulsar Escape
             isEscapePressed = !isEscapePressed;
 
             float equalizationLevel = isEscapePressed ? 1.0f : 0.0f;
