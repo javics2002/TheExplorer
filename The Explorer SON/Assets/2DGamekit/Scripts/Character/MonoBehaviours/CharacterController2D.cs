@@ -33,9 +33,6 @@ namespace Gamekit2D
         public Collider2D[] GroundColliders { get { return m_GroundColliders; } }
         public ContactFilter2D ContactFilter { get { return m_ContactFilter; } }
 
-        // Audio
-        EventInstance playerClimb;
-
         void Awake()
         {
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -51,28 +48,11 @@ namespace Gamekit2D
             Physics2D.queriesStartInColliders = false;
         }
 
-        private void Start()
-        {
-            StartCoroutine(updateAudioReferences());
-        }
-
-        private IEnumerator updateAudioReferences()
-        {
-            while (GameManager.Instance.audioManager == null || GameManager.Instance.fmodEvents == null)
-            {
-                yield return null;
-            }
-
-            playerClimb = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Climb"));
-        }
-
         void FixedUpdate()
         {
             m_PreviousPosition = m_Rigidbody2D.position;
             m_CurrentPosition = m_PreviousPosition + m_NextMovement;
             Velocity = (m_CurrentPosition - m_PreviousPosition) / Time.deltaTime;
-
-            ClimbAudio();
 
             m_Rigidbody2D.MovePosition(m_CurrentPosition);
             m_NextMovement = Vector2.zero;
@@ -244,22 +224,22 @@ namespace Gamekit2D
             }
         }
 
-        public void ClimbAudio()
-        {
-            if (PlayerCharacter.Climbing.y != 0)
-            {
-                PLAYBACK_STATE state;
-                playerClimb.getPlaybackState(out state);
+        //public void ClimbAudio()
+        //{
+        //    if (PlayerCharacter.Climbing.y != 0)
+        //    {
+        //        PLAYBACK_STATE state;
+        //        playerClimb.getPlaybackState(out state);
 
-                if (state.Equals(PLAYBACK_STATE.STOPPED))
-                {
-                    playerClimb.start();
-                }
-            }
-            else
-            {
-                playerClimb.stop(STOP_MODE.ALLOWFADEOUT);
-            }
-        }
+        //        if (state.Equals(PLAYBACK_STATE.STOPPED))
+        //        {
+        //            playerClimb.start();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        playerClimb.stop(STOP_MODE.ALLOWFADEOUT);
+        //    }
+        //}
     }
 }

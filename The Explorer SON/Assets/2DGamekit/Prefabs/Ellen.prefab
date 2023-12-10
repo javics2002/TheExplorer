@@ -635,12 +635,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4faf9fd6584ae4fbb4ec1051686a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isRunning: 0
   _materialParameterName: Material
   _speedParameterName: Speed Switch
   _jumpOrLandParameterName: Jump Or Land
+  _climbParameterName: Variation
   _stepDistance: 2
   _rayDistance: 1.2
   _startRunningTime: 2
+  _climbStepDistance: 1.3
+  _startClimbingTime: 2
   m_materialTypes:
   - Earth
   - Stone
