@@ -28,20 +28,19 @@ public class PlayAmbience : MonoBehaviour
         ambience = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Ambience"));
 
 
+
+        ambience.setParameterByName("MusicIntensity", 0.5f);
+        ambience.setParameterByName("EqualisationLevel", 0.0f);
+        ambience.setParameterByName("Zumbido", 0.4f);
+        ambience.setParameterByName("RandomSoundsRate", 0.4f);
+
+        music.setParameterByName("MusicIntensity", 0.30f);
+        music.setParameterByName("EqualisationLevel", 0.0f);
        
 
 
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"), "MusicIntensity",0.5f);
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"), "EqualisationLevel", 0.0f);
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"), "Zumbido", 0.4f);
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"), "RandomSoundsRate", 0.4f);
-
-
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Music"), "MusicIntensity", 0.25f);
-        GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Music"), "EqualisationLevel", 0.0f);
-
-
-        // Ahora GameManager está disponible, podemos reproducir el sonido
+       
+        
         music.start();
         ambience.start();
     }
@@ -57,19 +56,17 @@ public class PlayAmbience : MonoBehaviour
 
             float equalizationLevel = isEscapePressed ? 1.0f : 0.0f;
 
-            GameManager.Instance.audioManager.SetParameter(
-                GameManager.Instance.fmodEvents.GetEvent("Ambience"),
-                "EqualisationLevel",
-                equalizationLevel
-            );
-            GameManager.Instance.audioManager.SetParameter(
-              GameManager.Instance.fmodEvents.GetEvent("Music"),
-              "EqualisationLevel",
-              equalizationLevel
-          );
-            
-            GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Ambience"),"MusicIntensity",0.0f);
-            GameManager.Instance.audioManager.SetParameter(GameManager.Instance.fmodEvents.GetEvent("Music"),"MusicIntensity",0.0f);
+       
+         
+            //music.setParameterByName("MusicIntensity", 0.0f);
+            //ambience.setParameterByName("MusicIntensity", 0.0f);
+
+            music.setParameterByName("EqualisationLevel", equalizationLevel);
+            ambience.setParameterByName("EqualisationLevel", equalizationLevel);
+
+            //music.stop(STOP_MODE.IMMEDIATE);
+            //ambience.stop(STOP_MODE.IMMEDIATE);
+
 
         }
     }
