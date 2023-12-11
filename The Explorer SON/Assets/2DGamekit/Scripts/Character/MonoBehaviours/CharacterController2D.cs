@@ -25,6 +25,7 @@ namespace Gamekit2D
         RaycastHit2D[] m_FoundHits = new RaycastHit2D[3];
         Collider2D[] m_GroundColliders = new Collider2D[3];
         Vector2[] m_RaycastPositions = new Vector2[3];
+        
 
         public bool IsGrounded { get; protected set; }
         public bool IsCeilinged { get; protected set; }
@@ -241,5 +242,9 @@ namespace Gamekit2D
         //        playerClimb.stop(STOP_MODE.ALLOWFADEOUT);
         //    }
         //}
+        public Vector2 getPosition()
+        {
+            return  m_CurrentPosition;
+        }
     }
 }

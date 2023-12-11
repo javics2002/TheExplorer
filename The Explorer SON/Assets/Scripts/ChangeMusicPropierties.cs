@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gamekit2D;
 
 public class ChangeMusicPropierties : MonoBehaviour
 {
@@ -25,8 +26,10 @@ public class ChangeMusicPropierties : MonoBehaviour
 
         Debug.Log("Rayito frikispike");
         inCave = !inCave;
+     
         musicAmbienceSC = musicAmbienceGO.GetComponent<PlayAmbience>();
-        musicAmbienceSC.adjustEQINCave(inCave);
-        
+        if(musicAmbienceSC!=null) musicAmbienceSC.adjustEQINCave(inCave);
+
+
     }
 }

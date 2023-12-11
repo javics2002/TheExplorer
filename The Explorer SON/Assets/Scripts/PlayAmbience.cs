@@ -11,6 +11,7 @@ public class PlayAmbience : MonoBehaviour
     private bool isEscapePressed = false;
     EventInstance music;
     EventInstance ambience;
+    private bool inCave=false;
     void Start()
     {
         StartCoroutine(PlayAmbienceAfterDelay());
@@ -28,8 +29,8 @@ public class PlayAmbience : MonoBehaviour
 
         ambience.setParameterByName("MusicIntensity", 0.5f);
         ambience.setParameterByName("EqualisationLevel", 0.0f);
-        ambience.setParameterByName("Zumbido", 0.4f);
-        ambience.setParameterByName("RandomSoundsRate", 0.4f);
+        ambience.setParameterByName("Zumbido", 0.2f);
+        ambience.setParameterByName("RandomSoundsRate", 0.2f);
 
         music.setParameterByName("MusicIntensity", 0.30f);
         music.setParameterByName("EqualisationLevel", 0.0f);
@@ -48,18 +49,26 @@ public class PlayAmbience : MonoBehaviour
             // Cambiar el valor del par�metro de ecualizaci�n al pulsar Escape
             isEscapePressed = !isEscapePressed;
 
-            float equalizationLevel = isEscapePressed ? 1.0f : 0.0f;
+            
+            if(isEscapePressed)
+            {
+                music.setParameterByName("EqualisationLevel", 1);
+                ambience.setParameterByName("EqualisationLevel", 1);
+              
+            }
+            else if(inCave)
+            {
+                music.setParameterByName("EqualisationLevel", 0.4f);
+                ambience.setParameterByName("EqualisationLevel", 0.4f);
+            }
+            else
+            {
+                music.setParameterByName("EqualisationLevel", 0);
+                ambience.setParameterByName("EqualisationLevel", 0);
+            }
 
        
          
-            //music.setParameterByName("MusicIntensity", 0.0f);
-            //ambience.setParameterByName("MusicIntensity", 0.0f);
-
-            music.setParameterByName("EqualisationLevel", equalizationLevel);
-            ambience.setParameterByName("EqualisationLevel", equalizationLevel);
-
-            //music.stop(STOP_MODE.IMMEDIATE);
-            //ambience.stop(STOP_MODE.IMMEDIATE);
 
 
         }
@@ -67,25 +76,31 @@ public class PlayAmbience : MonoBehaviour
     }
     public void adjustEQINCave(bool isInCave)
     {
+        inCave = isInCave;
         if (!isInCave)
         {
             ambience.setParameterByName("MusicIntensity", 0.5f);
             ambience.setParameterByName("EqualisationLevel", 0.0f);
             ambience.setParameterByName("Zumbido", 0.4f);
             ambience.setParameterByName("RandomSoundsRate", 0.4f);
+             ambience.setParameterByName("CuevaAmbiente", 0.0f);
+
+          
+            
 
             music.setParameterByName("MusicIntensity", 0.30f);
             music.setParameterByName("EqualisationLevel", 0.0f);
         }
         else
         {
-            ambience.setParameterByName("MusicIntensity", 0.2f);
-            ambience.setParameterByName("EqualisationLevel", 0.4f);
+            FMOD.RESULT result = ambience.setParameterByName("CuevaAmbiente", 0.25f);
+            ambience.setParameterByName("MusicIntensity", 0f);
+            ambience.setParameterByName("EqualisationLevel", 0f);
             ambience.setParameterByName("Zumbido", 0.0f);
             ambience.setParameterByName("RandomSoundsRate", 0.0f);
 
-            music.setParameterByName("MusicIntensity", 0.40f);
-            music.setParameterByName("EqualisationLevel", 0.4f);
+            music.setParameterByName("MusicIntensity", 0.0f);
+            music.setParameterByName("EqualisationLevel", 0f);
         }
     }
 }
