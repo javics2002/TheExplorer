@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{bcf50e6e-2920-41b2-ab84-4020908381e2}">
+		<property name="name">
+			<value>Cueva</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b2a4c4da-4183-4873-9647-767926cc2b63}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{30b5ba44-b13d-498c-94c5-d0c510004a5b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{30b5ba44-b13d-498c-94c5-d0c510004a5b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

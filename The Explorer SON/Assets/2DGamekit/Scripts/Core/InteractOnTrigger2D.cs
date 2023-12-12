@@ -9,6 +9,8 @@ namespace Gamekit2D
         public LayerMask layers;
         public UnityEvent OnEnter, OnExit;
         public InventoryController.InventoryChecker[] inventoryChecks;
+   
+ 
 
         protected Collider2D m_Collider;
 
@@ -28,8 +30,10 @@ namespace Gamekit2D
             {
                 ExecuteOnEnter(other);
             }
-        }
+            
 
+        }
+  
         void OnTriggerExit2D(Collider2D other)
         {
             if(!enabled)
