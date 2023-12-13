@@ -74,11 +74,11 @@ public partial class AudioManager : MonoBehaviour
         {
             soundEvent.setParameterByName(parameterName, value);
             soundEvent.start(); // Asegurarse de que el evento se haya iniciado para aplicar los cambios
-            soundEvent.release(); // Importante liberar la instancia después de ajustar el parámetro
+            soundEvent.release(); // Importante liberar la instancia despuï¿½s de ajustar el parï¿½metro
         }
         else
         {
-            Debug.LogWarning($"El evento no es válido para ajustar el parámetro '{parameterName}'.");
+            Debug.LogWarning($"El evento no es vï¿½lido para ajustar el parï¿½metro '{parameterName}'.");
             soundEvent.release(); // Liberar la instancia en caso de error
         }
     }
@@ -87,10 +87,9 @@ public partial class AudioManager : MonoBehaviour
         FMOD.Studio.Bus bus = FMODUnity.RuntimeManager.GetBus(busName);
 
         bus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Detener eventos anteriores en el bus
-        bus.setPaused(false); // Asegurarse de que el bus no esté en pausa
+        bus.setPaused(false); // Asegurarse de que el bus no estï¿½ en pausa
 
         RuntimeManager.PlayOneShot(eventReference, worldPosition);
-
     }
 
     private void Update()
@@ -101,6 +100,5 @@ public partial class AudioManager : MonoBehaviour
         sfxBus.setVolume(sfxVolume);
         dialogueBus.setVolume(dialogueVolume);
     }
-
 }
 

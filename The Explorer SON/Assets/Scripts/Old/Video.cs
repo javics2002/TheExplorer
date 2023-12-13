@@ -14,7 +14,11 @@ namespace Gamekit2D
         public string Peticion;
         bool PrimeraVez = true;
 
-        void Update()
+		private void Start() {
+            GameManager.Instance.audioManager.PlayOneShotSound(GameManager.Instance.fmodEvents.GetEvent("VideoPinturasRupestres"), transform.position);
+		}
+
+		void Update()
         {
             tiempo = tiempo + 1 * Time.deltaTime;
             if(tiempo > DelayTime1 && PrimeraVez == true)

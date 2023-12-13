@@ -130,6 +130,8 @@ namespace Gamekit2D
 
             Puntuacion.NumeroFallos = 0;
             SinPicos.texto = false;
+
+            PersistentDataManager.ClearPersisters();
 		}
     }
 }

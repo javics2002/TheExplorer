@@ -47,6 +47,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
   fmodEvents: {fileID: 0}
+  aplicarCambios: 0
+  puedoMoverme: 0
+  tengoPigmentoRojo: 0
+  tengoPigmentoNegro: 0
+  tengoGafas: 0
+  tengoPalos: 0
+  tengoTubo: 0
+  tengoResina: 0
+  tengoPicos: 0
+  usoPicos: 0
+  cualDigo: 0
+  transitionPointActivo: 0
+  data1: 0
+  data2: 0
+  data3: 0
+  data4: 0
+  data5: 0
+  acerte: 0
+  dialogo0: 0
+  dialogo1: 0
+  dialogo2: 0
+  dialogo3: 0
+  dialogo4: 0
+  dialogo5: 0
+  dialogo6: 0
+  dialogo7: 0
+  dialogo8: 0
+  dialogo9: 0
+  dialogo10: 0
+  dialogo11: 0
+  dialogo12: 0
+  dialogo13: 0
+  dialogo14: 0
+  dialogo15: 0
+  dialogo16: 0
+  dialogo17: 0
+  picosB: 0
+  pregunta1: 0
+  pregunta2: 0
+  pregunta3: 0
+  pregunta4: 0
+  pregunta5: 0
+  pregunta6: 0
+  heConstruidoElTelescopio: 0
+  primeraVez: 0
+  vengoFoto1: 0
+  vengoFoto2: 0
+  numberD: 0
+  numeroFallos: 0
+  texto: 0
 --- !u!1 &5704693981085691915
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,4 +275,12 @@ MonoBehaviour:
         Data3: -804867199
         Data4: 602257933
       Path: event:/Ambience/CuevaAmbiente
+  - name: VideoPinturasRupestres
+    eventReference:
+      Guid:
+        Data1: -694571785
+        Data2: 1211108194
+        Data3: 1149469589
+        Data4: -1052935007
+      Path: event:/Music/VideoPinturasRupestres
   emitters: []

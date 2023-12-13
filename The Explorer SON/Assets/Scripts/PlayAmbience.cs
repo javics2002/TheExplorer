@@ -11,14 +11,6 @@ public class PlayAmbience : MonoBehaviour {
 	private bool inCave = false;
 
 	void Start() {
-		StartCoroutine(PlayAmbienceAfterDelay());
-	}
-
-	IEnumerator PlayAmbienceAfterDelay() {
-		while (GameManager.Instance.audioManager == null || GameManager.Instance.fmodEvents == null) {
-			yield return null;
-		}
-
 		music = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Music"));
 		ambience = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Ambience"));
 		cave = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("CaveAmbience"));
@@ -31,9 +23,14 @@ public class PlayAmbience : MonoBehaviour {
 		music.setParameterByName("MusicIntensity", 0.30f);
 		music.setParameterByName("EqualisationLevel", 0.0f);
 
-		// Ahora GameManager est� disponible, podemos reproducir el sonido
 		music.start();
 		ambience.start();
+	}
+
+	private void OnDestroy() {
+		ambience.stop(STOP_MODE.IMMEDIATE);
+		cave.stop(STOP_MODE.IMMEDIATE);
+		music.stop(STOP_MODE.IMMEDIATE);
 	}
 
 	void Update() {
@@ -42,20 +39,20 @@ public class PlayAmbience : MonoBehaviour {
 			isEscapePressed = !isEscapePressed;
 
 			if (isEscapePressed) {
-				music.setParameterByName("EqualisationLevel", 1);
-				ambience.setParameterByName("EqualisationLevel", 1);
-				ambience.setParameterByName("Zumbido", 0.0f);
-				ambience.setParameterByName("RandomSoundsRate", 0.0f);
+				music.setParameterByName("EqualisationLevel", 1, true);
+				ambience.setParameterByName("EqualisationLevel", 1, true);
+				ambience.setParameterByName("Zumbido", 0.0f, true);
+				ambience.setParameterByName("RandomSoundsRate", 0.0f, true);
 			}
 			else if (inCave) {
-				music.setParameterByName("EqualisationLevel", 0.4f);
-				ambience.setParameterByName("EqualisationLevel", 0.4f);
+				music.setParameterByName("EqualisationLevel", 0.4f, true);
+				ambience.setParameterByName("EqualisationLevel", 0.4f, true);
 			}
 			else {
-				music.setParameterByName("EqualisationLevel", 0);
-				ambience.setParameterByName("EqualisationLevel", 0);
-				ambience.setParameterByName("Zumbido", 0.5f);
-				ambience.setParameterByName("RandomSoundsRate", 0.4f);
+				music.setParameterByName("EqualisationLevel", 0, true);
+				ambience.setParameterByName("EqualisationLevel", 0, true);
+				ambience.setParameterByName("Zumbido", 0.5f, true);
+				ambience.setParameterByName("RandomSoundsRate", 0.4f, true);
 			}
 		}
 	}
@@ -68,7 +65,6 @@ public class PlayAmbience : MonoBehaviour {
 			ambience.setParameterByName("Zumbido", 0.5f);
 			ambience.setParameterByName("RandomSoundsRate", 0.4f);
 
-			music.setParameterByName("MusicIntensity", 0.3f);
 			music.setParameterByName("EqualisationLevel", 0.0f);
 			cave.stop(STOP_MODE.ALLOWFADEOUT);
 		}
@@ -78,8 +74,7 @@ public class PlayAmbience : MonoBehaviour {
 			ambience.setParameterByName("Zumbido", 0.0f);
 			ambience.setParameterByName("RandomSoundsRate", 0.0f);
 
-			music.setParameterByName("MusicIntensity", 0.0f);
-			music.setParameterByName("EqualisationLevel", 0f);
+			music.setParameterByName("EqualisationLevel", 0.4f);
 
 			cave.setParameterByName("MusicIntensity", 0.8f);
 			cave.start();
