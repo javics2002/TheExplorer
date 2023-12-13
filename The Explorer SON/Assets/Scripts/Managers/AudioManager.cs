@@ -4,14 +4,39 @@ using System.Runtime.InteropServices;
 using FMOD.Studio;
 using System.Collections.Generic;
 using System.Data;
+using System.Security.Policy;
 
 public partial class AudioManager : MonoBehaviour
 {
     List<EventInstance> eventInstances;
 
+    [Header("Volume")]
+    [Range(0, 1)]
+    public float masterVolume = 1;
+    [Range(0, 1)]
+    public float musicVolume = 1;
+    [Range(0, 1)]
+    public float ambienceVolume = 1;
+    [Range(0, 1)]
+    public float sfxVolume = 1;
+    [Range(0, 1)]
+    public float dialogueVolume = 1;
+
+    private Bus masterBus;
+    private Bus musicBus;
+    private Bus ambienceBus;
+    private Bus sfxBus;
+    private Bus dialogueBus;
+
     private void Awake()
     {
         eventInstances = new List<EventInstance>();
+
+        masterBus = RuntimeManager.GetBus("bus:/");
+        musicBus = RuntimeManager.GetBus("bus:/Music");
+        ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
+        sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        dialogueBus = RuntimeManager.GetBus("bus:/Dialogues");
     }
 
     private void OnDestroy()
@@ -67,6 +92,15 @@ public partial class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(eventReference, worldPosition);
 
     }
-  
+
+    private void Update()
+    {
+        masterBus.setVolume(masterVolume);
+        musicBus.setVolume(musicVolume);
+        ambienceBus.setVolume(ambienceVolume);
+        sfxBus.setVolume(sfxVolume);
+        dialogueBus.setVolume(dialogueVolume);
+    }
+
 }
 
