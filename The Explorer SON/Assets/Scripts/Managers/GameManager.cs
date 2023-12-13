@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector] public AudioManager audioManager;
 	[HideInInspector] public FMODEvents fmodEvents;
+	[HideInInspector] public PlayAmbience ambience;
 
 #if UNITY_EDITOR
 	[Header("Hack de progreso. Pausar el juego para cambiar las variables.")]
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
 
 		audioManager = GetComponentInChildren<AudioManager>();
 		fmodEvents = GetComponentInChildren<FMODEvents>();
+		ambience = GetComponentInChildren<PlayAmbience>();
 	}
 
 #if UNITY_EDITOR

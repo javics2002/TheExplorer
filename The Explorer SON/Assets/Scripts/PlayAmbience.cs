@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 public class PlayAmbience : MonoBehaviour {
 	private bool isEscapePressed = false;
@@ -23,14 +24,46 @@ public class PlayAmbience : MonoBehaviour {
 		music.setParameterByName("MusicIntensity", 0.30f);
 		music.setParameterByName("EqualisationLevel", 0.0f);
 
-		music.start();
-		ambience.start();
+		if(SceneManager.GetActiveScene().name == "Calar") {
+			music.start();
+			ambience.start();
+		}
+
+		DontDestroyOnLoad(gameObject);
+
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
-	private void OnDestroy() {
-		ambience.stop(STOP_MODE.IMMEDIATE);
-		cave.stop(STOP_MODE.IMMEDIATE);
-		music.stop(STOP_MODE.IMMEDIATE);
+	private void SceneLoaded(Scene scene, LoadSceneMode loadMode) {
+		switch (scene.name) {
+			case "Start":
+				music.stop(STOP_MODE.IMMEDIATE);
+
+				Destroy(gameObject);
+				SceneManager.sceneLoaded -= SceneLoaded;
+				break;
+			case "Dibujar":
+				ambience.stop(STOP_MODE.IMMEDIATE);
+				cave.stop(STOP_MODE.IMMEDIATE);
+				break;
+			case "Calar":
+				music.getPlaybackState(out PLAYBACK_STATE musicState);
+				if(musicState != PLAYBACK_STATE.PLAYING)
+					music.start();
+
+				ambience.getPlaybackState(out PLAYBACK_STATE ambienceState);
+				if(ambienceState != PLAYBACK_STATE.PLAYING)
+					ambience.start();
+
+				ambience.setParameterByName("RandomSoundsRate", 0.5f);
+				break;
+			case "Estrellas":
+				ambience.setParameterByName("RandomSoundsRate", 0.0f);
+				break;
+			default:
+				ambience.setParameterByName("RandomSoundsRate", 0.2f);
+				break;
+		}
 	}
 
 	void Update() {

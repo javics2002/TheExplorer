@@ -5,31 +5,11 @@ using Gamekit2D;
 
 public class ChangeMusicPropierties : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject musicAmbienceGO;
-    private PlayAmbience musicAmbienceSC;
-    public  bool inCave = false;
-    void Start()
-    {
-        
-    }
+    public void EnterCave() {
+		GameManager.Instance.ambience.adjustEQINCave(true);
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (!enabled)
-            return;
-
-        Debug.Log("Rayito frikispike");
-        inCave = !inCave;
-     
-        musicAmbienceSC = musicAmbienceGO.GetComponent<PlayAmbience>();
-        if(musicAmbienceSC!=null) musicAmbienceSC.adjustEQINCave(inCave);
-
-
-    }
+	public void ExitCave() {
+		GameManager.Instance.ambience.adjustEQINCave(false);
+	}
 }
