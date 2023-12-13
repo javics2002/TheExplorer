@@ -74,6 +74,8 @@ namespace Gamekit2D
         }
 
         void ResetGame() {
+            Debug.Log("Juego reseteado");
+
             PlayerCharacter.PuedoMoverme = true;
 			PlayerCharacter.TengoPigmentoRojo = false;
 			PlayerCharacter.TengoPigmentoNegro = false;
@@ -124,6 +126,7 @@ namespace Gamekit2D
             Dialogo.PrimeraVez = true;
 			Dialogo.VengoFoto1 = true;
 			Dialogo.VengoFoto2 = true;
+            Dialogo.NumberD = 100;
 
             Puntuacion.NumeroFallos = 0;
             SinPicos.texto = false;

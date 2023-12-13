@@ -217,4 +217,12 @@ MonoBehaviour:
         Data3: -1741997182
         Data4: -1330330135
       Path: event:/SFX/JumpLand
+  - name: CaveAmbience
+    eventReference:
+      Guid:
+        Data1: -27469721
+        Data2: 1323490632
+        Data3: -804867199
+        Data4: 602257933
+      Path: event:/Ambience/CuevaAmbiente
   emitters: []

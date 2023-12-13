@@ -73,161 +73,42 @@ namespace Gamekit2D
 
         void Start()
         {
-            if(PicosB == true)
-            {
-                Picos.enabled = true;
-            }
+			Picos.enabled = PicosB;
 
-            if(Dialogo0 == false)
-            {
-                Circulo0.enabled = false;
-            }
+			Circulo0.enabled = Dialogo0;
+			Circulo1.enabled = Dialogo1;
+			Circulo2.enabled = Dialogo2;
+			Circulo3.enabled = Dialogo3;
+			Circulo4.enabled = Dialogo4;
+			Circulo5.enabled = Dialogo5;
+			Circulo6.enabled = Dialogo6;
+			Circulo7.enabled = Dialogo7;
+			Circulo8.enabled = Dialogo8;
+			Circulo9.enabled = Dialogo9;
+			Circulo10.enabled = Dialogo10;
+			Circulo11.enabled = Dialogo11;
+			Circulo12.enabled = Dialogo12;
+			Circulo13.enabled = Dialogo13;
+			Circulo14.enabled = Dialogo14;
+			Circulo15.enabled = Dialogo15;
+			Circulo16.enabled = Dialogo16;
+			Circulo17.enabled = Dialogo17;
 
-            if(Dialogo1 == false)
-            {
-                Circulo1.enabled = false;
-            }
+			P1.enabled = Pregunta1;
+			P2.enabled = Pregunta2;
+			P3.enabled = Pregunta3;
+			P4.enabled = Pregunta4;
+			P5.enabled = Pregunta5;
+			P6.enabled = Pregunta6;
 
-            if(Dialogo2 == false)
-            {
-                Circulo2.enabled = false;
-            }
-            else
-            {
-                Circulo2.enabled = true;
-            }
 
-            if(Dialogo3 == false)
-            {
-                Circulo3.enabled = false;
-            }
-
-            if(Dialogo4 == false)
-            {
-                Circulo4.enabled = false;
-            }
-
-            if(Dialogo5 == false)
-            {
-                Circulo5.enabled = false;
-            }
-            else
-            {
-                Circulo5.enabled = true;
-            }
-
-            if(Dialogo6 == false)
-            {
-                Circulo6.enabled = false;
-            }
-
-            if(Dialogo7 == false)
-            {
-                Circulo7.enabled = false;
-            }
-            else
-            {
-                Circulo7.enabled = true;
-            }
-
-            if(Dialogo8 == false)
-            {
-                Circulo8.enabled = false;
-            }
-
-            if(Dialogo9 == false)
-            {
-                Circulo9.enabled = false;
-            }
-
-            if(Dialogo10 == false)
-            {
-                Circulo10.enabled = false;
-            }
-            else
-            {
-                Circulo10.enabled = false;
-            }
-
-            if(Dialogo11 == false)
-            {
-                Circulo11.enabled = false;
-            }
-
-            if(Dialogo12 == false)
-            {
-                Circulo12.enabled = false;
-            }
-
-            if(Dialogo13 == true)
-            {
-                Circulo13.enabled = true;
-            }
-
-            if(Dialogo14 == true)
-            {
-                Circulo14.enabled = true;
-            }
-
-            if(Dialogo15 == false)
-            {
-                Circulo15.enabled = false;
-            }
-
-            if(Dialogo16 == true)
-            {
-                Circulo16.enabled = true;
-            }
-
-            if(Dialogo17 == true)
-            {
-                Circulo17.enabled = true;
-            }
-
-            if(Pregunta1 == false)
-            {
-                P1.enabled = false;
-            }
-
-            if(Pregunta2 == false)
-            {
-                P2.enabled = false;
-            }
-
-            if(Pregunta3 == false)
-            {
-                P3.enabled = false;
-            }
-
-            if(Pregunta4 == false)
-            {
-                P4.enabled = false;
-            }
-
-            if(Pregunta5 == false)
-            {
-                P5.enabled = false;
-            }
-
-            if(Pregunta6 == false)
-            {
-                P6.enabled = false;
-            }
-
-            if(HeConstruidoelTelescopio == true)
+			if (HeConstruidoelTelescopio == true)
             {
                 Telescopio.SetActive(true);
                 TranstitionToStars.SetActive(true);
             }
 
-            if(PicosB == true)
-            {
-                Picos.enabled = true;
-            }
-            else
-            {
-                Picos.enabled = false;
-            }
+            Picos.enabled = PicosB;
         }
 
         void Update()
