@@ -645,6 +645,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].name
+      value: CaveAmbience
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].name
+      value: JumpLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].eventReference.Path
+      value: event:/Ambience/CuevaAmbiente
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].eventReference.Path
+      value: event:/SFX/JumpLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].eventReference.Guid.Data1
+      value: -27469721
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].eventReference.Guid.Data2
+      value: 1323490632
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].eventReference.Guid.Data3
+      value: -804867199
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[10].eventReference.Guid.Data4
+      value: 602257933
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].eventReference.Guid.Data1
+      value: 1503549934
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].eventReference.Guid.Data2
+      value: 1139474963
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].eventReference.Guid.Data3
+      value: -1741997182
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454911015729900877, guid: 4a723a98fffa9704bb5436dd4f243907,
+        type: 3}
+      propertyPath: events.Array.data[11].eventReference.Guid.Data4
+      value: -1330330135
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

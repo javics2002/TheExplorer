@@ -10,6 +10,7 @@ public class PlayAmbience : MonoBehaviour
     private bool isEscapePressed = false;
     EventInstance music;
     EventInstance ambience;
+    EventInstance cave;
     private bool inCave=false;
     void Start()
     {
@@ -25,6 +26,8 @@ public class PlayAmbience : MonoBehaviour
 
         music = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Music"));
         ambience = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Ambience"));
+        cave = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("CaveAmbience"));
+
 
         ambience.setParameterByName("MusicIntensity", 0.4f);
         ambience.setParameterByName("EqualisationLevel", 0.0f);
@@ -97,9 +100,11 @@ public class PlayAmbience : MonoBehaviour
            
             music.setParameterByName("MusicIntensity", 0.3f);
             music.setParameterByName("EqualisationLevel", 0.0f);
+            cave.stop(STOP_MODE.ALLOWFADEOUT);
         }
         else
         {
+
             ambience.setParameterByName("MusicIntensity", 0.1f);
             ambience.setParameterByName("EqualisationLevel", 0f);
             ambience.setParameterByName("Zumbido", 0.0f);
@@ -108,29 +113,12 @@ public class PlayAmbience : MonoBehaviour
 
             music.setParameterByName("MusicIntensity", 0.0f);
             music.setParameterByName("EqualisationLevel", 0f);
+
+            cave.setParameterByName("MusicIntensity", 0.8f);
+            cave.start();
+
         }
     }
 
-    public void adjustAtExit()
-    {
-        ambience.setParameterByName("MusicIntensity", 0.4f);
-        ambience.setParameterByName("EqualisationLevel", 0.0f);
-        ambience.setParameterByName("Zumbido", 0.5f);
-        ambience.setParameterByName("RandomSoundsRate", 0.4f);
-
-
-        music.setParameterByName("MusicIntensity", 0.3f);
-        music.setParameterByName("EqualisationLevel", 0.0f);
-    }
-    public void adjustAtEnter()
-    {
-        ambience.setParameterByName("MusicIntensity", 0.2f);
-        ambience.setParameterByName("EqualisationLevel", 0.25f);
-        ambience.setParameterByName("Zumbido", 0.0f);
-        ambience.setParameterByName("RandomSoundsRate", 0.0f);
-
-
-        music.setParameterByName("MusicIntensity", 0.2f);
-        music.setParameterByName("EqualisationLevel", 0.25f);
-    }
+  
 }

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Climb Zone
   - StoneGround
+  - Gafas
   layers:
   - Default
   - TransparentFX
