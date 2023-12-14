@@ -9,6 +9,7 @@ using System.Security.Policy;
 public partial class AudioManager : MonoBehaviour
 {
     List<EventInstance> eventInstances;
+    List<StudioEventEmitter> eventEmitters;
 
     [Header("Volume")]
     [Range(0, 1)]
@@ -31,6 +32,7 @@ public partial class AudioManager : MonoBehaviour
     private void Awake()
     {
         eventInstances = new List<EventInstance>();
+        eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -46,6 +48,10 @@ public partial class AudioManager : MonoBehaviour
             instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             instance.release();
         }
+        foreach(StudioEventEmitter emitter in eventEmitters)
+        {
+            emitter.Stop();
+        }
     }
 
 	public void PlayOneShotSound(EventReference eventReference, Vector3 worldPosition)
@@ -58,6 +64,15 @@ public partial class AudioManager : MonoBehaviour
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         eventInstances.Add(eventInstance);
         return eventInstance;
+    }
+
+    public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)
+    {
+        StudioEventEmitter emitter = emitterGameObject.GetComponent<StudioEventEmitter>();
+        emitter.EventReference = eventReference;
+
+        eventEmitters.Add(emitter);
+        return emitter; 
     }
 
     //Me gustaria saber poner parametros para poder ajustar el ambiente en funcion de la zona pero de momento esta asi

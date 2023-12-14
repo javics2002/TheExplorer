@@ -290,6 +290,22 @@ MonoBehaviour:
         Data3: 141948854
         Data4: -1568847142
       Path: event:/Music/VideoPinturasRupestres
+  - name: 360Outer
+    eventReference:
+      Guid:
+        Data1: -124186571
+        Data2: 1148564168
+        Data3: 762055567
+        Data4: -2063874553
+      Path: event:/SFX/360Outer
+  - name: 360Inner
+    eventReference:
+      Guid:
+        Data1: 1443194264
+        Data2: 1163318417
+        Data3: 50892930
+        Data4: 975044127
+      Path: event:/SFX/360Inner
   emitters: []
 --- !u!1001 &6566973400906047966
 PrefabInstance:
