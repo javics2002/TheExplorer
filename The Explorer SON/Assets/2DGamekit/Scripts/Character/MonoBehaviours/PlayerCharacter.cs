@@ -21,6 +21,8 @@ namespace Gamekit2D
         public static bool TengoTubo = false;
         public static bool TengoResina = false;
 
+        public bool EstoyCueva = false;
+
         public InventoryController inventoryController
         {
             get { return m_InventoryController; }
@@ -242,11 +244,13 @@ namespace Gamekit2D
         public void EntroACueva()
         {
             spriteRenderer.color = Color.grey;
+            EstoyCueva = true;
         }
 
         public void SalgoDeCueva()
         {
             spriteRenderer.color = Color.white;
+            EstoyCueva = false;
         }
 
         void OnTriggerExit2D(Collider2D other)

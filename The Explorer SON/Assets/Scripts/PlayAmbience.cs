@@ -9,7 +9,7 @@ public class PlayAmbience : MonoBehaviour {
 	EventInstance music;
 	EventInstance ambience;
 	EventInstance cave;
-	private bool inCave = false;
+	public bool inCave = false;
 
 	void Start() {
 		music = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Music"));

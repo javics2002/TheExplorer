@@ -9,6 +9,9 @@ public class FMODPlayerAudio : MonoBehaviour
     private PlayerCharacter _playerCharacter;
 
     [SerializeField]
+    private bool test;
+
+    [SerializeField]
     private bool _isRunning;
 
     [Header("FMOD Settings")]
@@ -16,6 +19,7 @@ public class FMODPlayerAudio : MonoBehaviour
     [SerializeField] private string _speedParameterName;
     [SerializeField] private string _jumpOrLandParameterName;
     [SerializeField] private string _climbParameterName;
+    [SerializeField] private string _reverbParameterName;
 
     [Header("Footstep Settings")]
     [SerializeField] private float _stepDistance = 2.0f;
@@ -55,6 +59,9 @@ public class FMODPlayerAudio : MonoBehaviour
 
     void Update()
     {
+        test = _playerCharacter.EstoyCueva;
+
+
         // Running 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -97,6 +104,17 @@ public class FMODPlayerAudio : MonoBehaviour
                 FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstep, transform, GetComponent<Rigidbody2D>());
                 footstep.setParameterByName(_materialParameterName, _fMaterialValue);
                 footstep.setParameterByName(_speedParameterName, _fPlayerRunning);
+
+                // reverb
+                if (_playerCharacter.EstoyCueva)
+                {
+                    footstep.setParameterByName(_reverbParameterName, 1);
+                }
+                else
+                {
+                    footstep.setParameterByName(_reverbParameterName, 0);
+                }
+                
                 footstep.start();
             }
 
@@ -118,6 +136,17 @@ public class FMODPlayerAudio : MonoBehaviour
                 EventInstance climbStep = GameManager.Instance.audioManager.CreateInstance(GameManager.Instance.fmodEvents.GetEvent("Climb"));
                 FMODUnity.RuntimeManager.AttachInstanceToGameObject(climbStep, transform, GetComponent<Rigidbody2D>());
                 climbStep.setParameterByName(_climbParameterName, UnityEngine.Random.Range(0f, 1f));
+
+                // reverb
+                if (_playerCharacter.EstoyCueva)
+                {
+                    climbStep.setParameterByName(_reverbParameterName, 1);
+                }
+                else
+                {
+                    climbStep.setParameterByName(_reverbParameterName, 0);
+                }
+
                 climbStep.start();
 
                 _climbStepRandom = Random.Range(0f, 0.2f);
@@ -168,6 +197,17 @@ public class FMODPlayerAudio : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(jumpOrLand, transform, GetComponent<Rigidbody2D>()); 
         jumpOrLand.setParameterByName(_materialParameterName, _fMaterialValue);
         jumpOrLand.setParameterByName(_jumpOrLandParameterName, F_JumpLandCalc ? 0f : 1f);
+
+        // reverb
+        if (_playerCharacter.EstoyCueva)
+        {
+            jumpOrLand.setParameterByName(_reverbParameterName, 1);
+        }
+        else
+        {
+            jumpOrLand.setParameterByName(_reverbParameterName, 0);
+        }
+
         jumpOrLand.start();
         //jumpOrLand.release();
     }

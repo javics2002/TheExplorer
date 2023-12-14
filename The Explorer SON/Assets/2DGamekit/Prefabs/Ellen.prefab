@@ -640,6 +640,7 @@ MonoBehaviour:
   _speedParameterName: Speed Switch
   _jumpOrLandParameterName: Jump Or Land
   _climbParameterName: Variation
+  _reverbParameterName: Reverb
   _stepDistance: 2
   _rayDistance: 1.2
   _startRunningTime: 2

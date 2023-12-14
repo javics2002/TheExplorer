@@ -7,6 +7,7 @@ public class ChangeMusicPropierties : MonoBehaviour
 {
     public void EnterCave() {
 		GameManager.Instance.ambience.adjustEQINCave(true);
+		Debug.Log("entro cueva");
 	}
 
 	public void ExitCave() {
