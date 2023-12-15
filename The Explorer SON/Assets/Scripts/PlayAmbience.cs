@@ -67,26 +67,23 @@ public class PlayAmbience : MonoBehaviour {
 	}
 
 	void Update() {
-		// Verificar si la tecla Escape ha sido presionada
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			isEscapePressed = !isEscapePressed;
+		isEscapePressed = SceneManager.sceneCount == 2;
 
-			if (isEscapePressed) {
-				music.setParameterByName("EqualisationLevel", 1, true);
-				ambience.setParameterByName("EqualisationLevel", 1, true);
-				ambience.setParameterByName("Zumbido", 0.0f, true);
-				ambience.setParameterByName("RandomSoundsRate", 0.0f, true);
-			}
-			else if (inCave) {
-				music.setParameterByName("EqualisationLevel", 0.4f, true);
-				ambience.setParameterByName("EqualisationLevel", 0.4f, true);
-			}
-			else {
-				music.setParameterByName("EqualisationLevel", 0, true);
-				ambience.setParameterByName("EqualisationLevel", 0, true);
-				ambience.setParameterByName("Zumbido", 0.5f, true);
-				ambience.setParameterByName("RandomSoundsRate", 0.4f, true);
-			}
+		if (isEscapePressed) {
+			music.setParameterByName("EqualisationLevel", 1, true);
+			ambience.setParameterByName("EqualisationLevel", 1, true);
+			ambience.setParameterByName("Zumbido", 0.0f, true);
+			ambience.setParameterByName("RandomSoundsRate", 0.0f, true);
+		}
+		else if (inCave) {
+			music.setParameterByName("EqualisationLevel", 0.4f, true);
+			ambience.setParameterByName("EqualisationLevel", 0.4f, true);
+		}
+		else {
+			music.setParameterByName("EqualisationLevel", 0, true);
+			ambience.setParameterByName("EqualisationLevel", 0, true);
+			ambience.setParameterByName("Zumbido", 0.5f, true);
+			ambience.setParameterByName("RandomSoundsRate", 0.4f, true);
 		}
 	}
 

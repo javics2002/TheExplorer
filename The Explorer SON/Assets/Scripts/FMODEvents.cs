@@ -49,7 +49,6 @@ public class FMODEvents : MonoBehaviour {
 	public void PlayDialogue(string key) {
 		dialogueInstance = RuntimeManager.CreateInstance(eventsDictionary["Dialog"]);
 
-		// Pin the key string in memory and pass a pointer through the user data
 		GCHandle stringHandle = GCHandle.Alloc(key);
 		dialogueInstance.setUserData(GCHandle.ToIntPtr(stringHandle));
 
