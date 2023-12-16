@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{1c657b77-1a23-46fc-9907-63b235796f47}">
 		<property name="assetPath">
-			<value>2DGamekt/Environment/PajaroVolando.wav</value>
+			<value>Ambience/PajaroVolando.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

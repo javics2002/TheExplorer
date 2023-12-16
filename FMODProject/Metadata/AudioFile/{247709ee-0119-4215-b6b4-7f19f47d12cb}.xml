@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{247709ee-0119-4215-b6b4-7f19f47d12cb}">
 		<property name="assetPath">
-			<value>2DGamekt/Environment/Abeja.wav</value>
+			<value>Ambience/Abeja.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
