@@ -5,7 +5,7 @@ using FMOD.Studio;
 using UnityEngine.SceneManagement;
 
 public class PlayAmbience : MonoBehaviour {
-	private bool isEscapePressed = false;
+	private bool isPauseOpen = false;
 	EventInstance music;
 	EventInstance ambience;
 	EventInstance cave;
@@ -24,9 +24,12 @@ public class PlayAmbience : MonoBehaviour {
 		music.setParameterByName("MusicIntensity", 0.30f);
 		music.setParameterByName("EqualisationLevel", 0.0f);
 
-		if(SceneManager.GetActiveScene().name == "Calar") {
+		cave.setParameterByName("MusicIntensity", 0.0f);
+
+		if (SceneManager.GetActiveScene().name == "Calar") {
 			music.start();
 			ambience.start();
+			cave.start();
 		}
 
 		DontDestroyOnLoad(gameObject);
@@ -55,6 +58,10 @@ public class PlayAmbience : MonoBehaviour {
 				if(ambienceState != PLAYBACK_STATE.PLAYING)
 					ambience.start();
 
+				cave.getPlaybackState(out PLAYBACK_STATE caveState);
+				if(caveState != PLAYBACK_STATE.PLAYING)
+					cave.start();
+
 				ambience.setParameterByName("RandomSoundsRate", 0.5f);
 				break;
 			case "Estrellas":
@@ -67,9 +74,14 @@ public class PlayAmbience : MonoBehaviour {
 	}
 
 	void Update() {
-		isEscapePressed = SceneManager.sceneCount == 2;
+		Debug.Log(music);
 
-		if (isEscapePressed) {
+		if (isPauseOpen == (SceneManager.sceneCount == 2))
+			return;
+
+		isPauseOpen = SceneManager.sceneCount == 2;
+
+		if (isPauseOpen) {
 			music.setParameterByName("EqualisationLevel", 1, true);
 			ambience.setParameterByName("EqualisationLevel", 1, true);
 			ambience.setParameterByName("Zumbido", 0.0f, true);
@@ -96,7 +108,8 @@ public class PlayAmbience : MonoBehaviour {
 			ambience.setParameterByName("RandomSoundsRate", 0.4f);
 
 			music.setParameterByName("EqualisationLevel", 0.0f);
-			cave.stop(STOP_MODE.ALLOWFADEOUT);
+
+			cave.setParameterByName("MusicIntensity", 0.0f);
 		}
 		else {
 			ambience.setParameterByName("MusicIntensity", 0.1f);
@@ -107,7 +120,6 @@ public class PlayAmbience : MonoBehaviour {
 			music.setParameterByName("EqualisationLevel", 0.4f);
 
 			cave.setParameterByName("MusicIntensity", 0.8f);
-			cave.start();
 		}
 	}
 }
