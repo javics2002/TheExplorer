@@ -92,3 +92,5 @@ crashlytics-build.properties
 **/.cache/
 **/.unsaved/
 **/.user/
+
+**/.vsconfig
